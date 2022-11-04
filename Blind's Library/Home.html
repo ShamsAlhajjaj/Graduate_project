@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blind's Library</title>
+    <link rel="stylesheet" href="Styles/Home.css">
+    <link rel="stylesheet" href="Styles/HeaderStyles.css">
+    <link rel="stylesheet" href="Styles/PopUp.css">
+    <link rel="stylesheet" href="Styles/SideBar.css">
+
+    <script src="Scripts/ButtonsScripts.js"></script>
+    <script src="Scripts/PopUpFunctions.js"></script>
+    <script src="Scripts/SideBar.js"></script>
+
+
+
+    <script src="Scripts/Tests.js"></script>
+
+
+</head>
+
+<body style="margin: 0;">
+    <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
+    
+    <div class="HeaderBar">
+        <p class="HeaderText" role = "button" onclick="visitPage('Home.html')">Blind's Library</p>
+        <div class="SearchBar">
+            <input id="SrchBoxFn" class="SearchTextBox" type="text">
+            <img class="SearchButton" src="Searchicon.jpg" width="37px" role="button" onclick="searchBox()">
+        </div>
+        <div id="UsrInfoFn" class="UserInfo">
+            <button class="LoginHeader" onclick="visitPage('SignUp_Login.html')">Login</button>
+            <button id="UsrIcnFn" class="UserIcon" onclick="openPopUP()">
+                <img src="UserIcon.jpg" width="38px">
+            </button>
+        </div>
+    </div>
+
+    <!--!!!!!!!!!!!!!!!!    POPUPS    !!!!!!!!!!!!!!!!-->
+    <div id ="PopUp1" class="LoginPopUp">
+        <p> You are not Login yet<br>Log in or Create a new account </p>
+        
+        <div>
+                <input id="Email" class="TextboxsPopUp" type="text" placeholder="Email"> 
+                <input id= "Password" class="TextboxsPopUp" type="password" placeholder="Password">
+        </div>
+        
+        <div>
+            <button class="LoginButton" onclick="LoginCheak()">Login</button><br><button class="SignUpButton" onclick="visitPage('SignUp_Login.html')">Sign Up</button>
+        </div>
+        <p> or Login using your accounts: </p>
+        <div> 
+            <button class = "Socialicons" ><img src="googleicon.png" width="38px"></button> 
+            <button class = "Socialicons" ><img src="Facebookicon.png" width="42px"></button> 
+            <button class = "Socialicons" ><img src="appleicon.png" width="42px"></button>
+        </div>
+    </div>
+
+    <!--!!!!!!!!!!!!!!!!    BODY    !!!!!!!!!!!!!!!!-->
+    <div class="Side_Body">
+        <div id ="SBMainFn" class="SideBar">
+                <button class="SBBtns">1</button>
+                <button class="SBBtns">2</button>
+                <button class="SBBtns">3</button>
+                <button class="SBBtns">4</button>
+                <button class="SBBtns">5</button>
+                <button class="SBBtns">6</button>
+                <button class="SBBtns">7</button>
+                <button class="SBBtns">8</button>
+
+        </div>
+        <button id="SBBtnFn" class="SBButton" onclick="SHButton()">
+            <img id="SBArrwIcn" src="LeftArrow.png" width="18px"></button>
+        <div id="LstBookFn"class="ListBooks">
+            <div class="NovelsBooks">
+                <div class="CategoryHeader"><p class="CategoryName">POEMS</p></div>
+                <div class="CategoryContents">
+                    <div class="Book">
+                        <img class="BookCover" src="Book3thumb.jpg">
+                        <div class="BookInfo">
+                            <p class="BookName">Poem By Shakespeares</p>
+                            <p class="BookDescription">This Poem I don't know anything about it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="HistoryBooks">
+                <div class="CategoryHeader"><p class="CategoryName">HISTORY</p></div>
+                <div class="CategoryContents">
+                    <div class="Book">
+                        <img class="BookCover" src="Book4thumb.jpg">
+                        <div class="BookInfo">
+                            <p class="BookName">Poem By Shakespeares</p>
+                            <p class="BookDescription">This Poem I don't know anything about it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="NovelsBooks">
+                <div class="CategoryHeader"><p class="CategoryName">POEMS</p></div>
+                <div class="CategoryContents">
+                    <div id= "Book001" class="Book" onclick="visitPage('book001.html')">
+                        <img class="BookCover" src="Book3thumb.jpg">
+                        <div class="BookInfo">
+                            <p class="BookName">Poem By Shakespeares</p>
+                            <p class="BookDescription">This Poem I don't know anything about it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="NOVELS">
+                <div class="CategoryHeader"><p class="CategoryName">NOVELS</p></div>
+                <div class="CategoryContents">
+                    <div class="Book">
+                        <img class="BookCover" src="Book1thumb.jpg">
+                        <div class="BookInfo">
+                            <p class="BookName">Harry Potter and the Philosopher's Stone</p>
+                            <p class="BookDescription">This Novel Talking about the Mothers Hackers Called Magicians.</p>
+                        </div>
+                    </div>
+                    <div class="Book">
+                        <img class="BookCover" src="Book2thumb.jpg">
+                        <div class="BookInfo">
+                            <p class="BookName">Sherlock Holmes: A Study in Scarlet</p>
+                            <p class="BookDescription">This Novel Talking about the Detective Sherlock Holmes who you should know about him bro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
