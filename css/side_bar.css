@@ -23,7 +23,7 @@
     left: 240px;
     height: 100%;
     border: 0;
-    background-color: aquamarine;
+    background-color: rgb(27, 255, 212);
     box-shadow: rgb(102, 102, 102) 1px 1px 8px;
     transition: 1s;
 }
@@ -33,7 +33,7 @@
     text-shadow: black 1px 2px 3px;
     height: inherit;
     border: 0px;
-    background-color: rgb(  50, 210, 175);;
+    background-color: rgb(30, 235, 200);;
     border-style: solid;
     border-radius: 4px;
     transition: 0.25s;

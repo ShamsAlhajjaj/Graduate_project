@@ -1,179 +1,195 @@
 
         .HeaderBar {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
+            user-select: none;
             z-index: 100;
-            margin: 0;
-            padding: 0;
+
+            position: fixed;
+
             width: 100%;
             height: 70px;
-            display: grid;
-            flex-direction: Row;
-            grid-template-columns: 250px 3fr 350px;
-            box-shadow: rgb(151, 151, 151) 0px 2px 15px;
 
-            background-color: rgb(127, 255, 212);
+            display: grid;
+            grid-template-columns: 250px 3fr 350px;
+
+            background-color: rgb(27, 255, 212);
+
+            box-shadow: rgb(50, 150, 150) 0px 4px 15px;
         }
+
+
         .HeaderText{
-            color: white;
-            text-shadow: black 4px 2px 4px;
-            font-size: 30px;
-            padding-left: 30px;
-            margin-top: 18px;
-            font-family: Cochin;
             cursor: pointer;
 
-            user-select: none;
+            font-size: 30px;
+            font-family: Cochin;
+
+            margin-top: 18px;
+            padding-left: 30px;
+
+            color: white;
+
+            text-shadow: black 4px 2px 4px;
+
             transition: 0.1s;
         }
         .HeaderText:hover{
             font-size: 32px;
+
             margin-top: 16px;
             padding-left: 24px;
         }
         .HeaderText:active{
-            margin-top: 19px;
             font-size: 28px;
+
+            margin-top: 19px;
             padding-left: 32px;
+
             color: rgb(250, 250, 250);
+            
             transition: 0.05s;
         }
+
+
         .SearchBar{
             height: 70px;
-            margin: 0 0 0 0;
-            padding: 0 0 0 0;
+
             display: grid;
             flex-direction: row;
             grid-template-columns: 1fr 45px;
         }
+
         .SearchTextBox{
-            margin: 18px 10px 12px 10px;
-            height: 34px;
-            border: 0px;
-            border-radius: 35px;
-            transition: 0.15s;
             font-size: 25px;
+            
+            margin: 18px 10px 12px 10px;
+
+            height: 34px;
+
             text-align: center;
 
+            border: 0px;
+            border-radius: 35px;
+
+            transition: 0.15s;            
         }
         .SearchTextBox:hover{
             margin-top: 12px;
+
             height:44px;
         }
+
         .SearchButton{
-            user-select: none;
+            cursor: pointer;
+
             margin: 16px 10px 12px 0px;
             padding: 2px;
+
             width: 34px;
             height: 50%;
+
             background-color: white;
+
             border: 2px;
             border-radius: 17px;
+
             transition: 0.15s;
-            cursor: pointer;
         }
         .SearchButton:hover{
             margin-top: 14px;
             margin-right: 20px;
+            
             height: 40px;
             width: 40px;
-            box-shadow: rgb(175, 175, 175) -1px 0px 8px;
+
             border-radius: 20px;
+
+            box-shadow: rgb(75, 175, 175) -1px 0px 8px;
         }
         .SearchButton:active{
+            cursor: pointer;
+
             margin: 16px 10px 12px 0px;
             padding: 2px;
+
             width: 34px;
             height: 50%;
-            border: 2px;
+
+            border: 0px;
             border-radius: 17px;
-            transition: 0.15s;
-            cursor: pointer;
+
             box-shadow: rgb(175, 175, 175) -1px 0px 5px;
+            
             transition: 0.05s;
         }
+
+
         .UserInfo{
             display: grid;
             flex-direction: row;
             grid-template-columns: 1fr 105px;
             
         }
-        .LoginHeader{
-            user-select: none;
-            margin: 18px 30px 12px 120px;
-            width: 110px;
-            height: 34px;
-            border-radius: 17px;
-            transition: 0.15s;
 
-            border: 0px;
+        .LoginHeader{
+            cursor: pointer;
+
             font-size: 20px;
             text-align: center;
+
+            margin: 18px 30px 12px 120px;
+
+            width: 110px;
+            height: 34px;
+
             background-color: white;
-            box-shadow: rgb(175, 175, 175) -2px 2px 5px;
-            cursor: pointer;
+            
+            border: 0px;
+            border-radius: 17px;
+            
+            box-shadow: rgb(75, 175, 175) -2px 2px 5px;
+
+            transition: 0.15s;
         }
         .LoginHeader:hover{
             margin-left: 110px;
+
             width: 130px;
         }
         .LoginHeader:active{
             background-color: rgb(250, 250, 250);
         }
+
         .UserIcon{
+            cursor: pointer;
+
             position: relative;
-            user-select: none;
-            background-color: transparent;
             margin: 14px 30px 0px 0px;
             padding: 1px;
+
             width: 40px;
-            height: 41px;
-            border: 2px;
+            height: 40px;
+            
+            background-color: white;            
+            
+            border: 0px;
             border-radius: 17px;
-            transition: 0.15s;
-            cursor: pointer;
-            background-color: white;
-            box-shadow: rgb(175, 175, 175) -1px 0px 5px;
+
+            box-shadow: rgb(75, 175, 175) -1px 0px 5px;
+
             transition: 0.15s;
         }
-
         .UserIcon:hover{
             margin-top: 12px;
             margin-right: 20px;
+
             height: 44px;
             width: 44px;
-            box-shadow: rgb(175, 175, 175) -1px 0px 8px;
+            
             border-radius: 23px;
+            
+            box-shadow: rgb(75, 175, 175) -1px 0px 8px;
+            
         }   
-
         .UserIcon:active{
             background-color: rgb(250, 250, 250);
         }
-        /*
-        .UserIcon .UserIconClickedList{
-            width:1%;
-            height:1%;
-            position: absolute;
-            padding: 0;
-            top:0;
-            right:0;
-            background-color: white;
-            opacity: 0%;
-            transition: 0.5s;
-            color: transparent;
-        }
-        .UserIcon:active .UserIconClickedList{
-            width: 100%;
-            height: 120px;
-            opacity: 100%;
-            padding: 16px 8px;
-            opacity: 100%;
-            top: 45px;
-            right: 20px;
-            border-radius: 10px;
-            color: black;
-        }
-        */

@@ -1,3 +1,5 @@
+let a = false;
+
 function LoginCheak()
 {
     let em = document.getElementById('Email').value;
@@ -33,4 +35,39 @@ function SignUpCheak(){
         alert("Your Password didn't Match.. Please Enter your password again!")
     else
         alert("Your First Name is: " + fN + "\nYour Last Name is: " + lN + "\nYour Email is: " + nEm + "\nYour Password is : " + nPs)  
+}
+
+function MediaPlayer(button){
+
+    if (button == "nxt")
+    {
+        alert("Next Book");
+        a = true;
+        document.getElementById("plbtn").src = '_images/media-player-icons/pause_button_logo.png';
+    }
+    else if (button == "prv")
+    {
+        alert("Previous Book");
+        a = true;
+        document.getElementById("plbtn").src = '_images/media-player-icons/pause_button_logo.png';
+    }
+    else if (button == "stp")
+    {
+        alert("Stop Playing");
+        a = false;
+        document.getElementById("plbtn").src = '_images/media-player-icons/play_button_logo.png';
+    }
+    else if (button == "play")
+        if (!a)
+        {
+            a = !a;
+            document.getElementById("plbtn").src = '_images/media-player-icons/pause_button_logo.png';
+            alert("Play the Book")
+        }
+        else
+        {
+            a = !a;
+            document.getElementById("plbtn").src = '_images/media-player-icons/play_button_logo.png';
+            alert("Pause Playing")
+        }
 }

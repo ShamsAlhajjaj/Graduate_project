@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Blind Library - Search | "THE BOOK"</title>
+    <title>Blind's Library</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/header_styles.css">
+    <link rel="stylesheet" href="css/pop_up.css">
+    <link rel="stylesheet" href="css/side_bar.css">
+
+    <script src="scripts/header.js"></script>
+    <script src="scripts/side_bar.js"></script>
+
     
-    <link rel="stylesheet" href="Styles/HeaderStyles.css">
-    <link rel="stylesheet" href="Styles/PopUp.css">
-    <link rel="stylesheet" href="Styles/SideBar.css">
-    <link rel="stylesheet" href="Styles/SearchResult.css">
-
-
-    <script src="Scripts/ButtonsScripts.js"></script>
-    <script src="Scripts/PopUpFunctions.js"></script>
-    <script src="Scripts/SideBar.js"></script>
-
-
-
-    <script src="Scripts/Tests.js"></script>
+    <script src="scripts/tests.js"></script>
 
 
 </head>
 
-<body style="margin: 0;">
+<body style="margin: 0; background-color:  rgb(10, 200, 170);">
+
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
-    
     <div class="HeaderBar">
-        <p class="HeaderText" role = "button" onclick="visitPage('Home.html')">Blind's Library</p>
+        <p class="HeaderText" role = "button" onclick="visitPage('home.html')">Blind's Library</p>
         <div class="SearchBar">
-            <input id="SrchBoxFn" class="SearchTextBox" type="text">
-            <img class="SearchButton" src="Searchicon.jpg" width="37px" role="button" onclick="searchBox()">
+            <input id="SrchBoxFn" class="SearchTextBox" type="search">
+            <img class="SearchButton" src="_images/search-button-icon/search_button_icon.png" width="32px" role="button" onclick="searchBox()">
         </div>
         <div id="UsrInfoFn" class="UserInfo">
             <button class="LoginHeader" onclick="visitPage('SignUp_Login.html')">Login</button>
             <button id="UsrIcnFn" class="UserIcon" onclick="openPopUP()">
-                <img src="UserIcon.jpg" width="38px">
+                <img src="_images/guest-user-icon/guest_user_icon_transparent.png" width="32px">
             </button>
         </div>
     </div>
@@ -51,14 +47,14 @@
         </div>
         <p> or Login using your accounts: </p>
         <div> 
-            <button class = "Socialicons" ><img src="googleicon.png" width="38px"></button> 
-            <button class = "Socialicons" ><img src="Facebookicon.png" width="42px"></button> 
-            <button class = "Socialicons" ><img src="appleicon.png" width="42px"></button>
+            <button class = "Socialicons" ><img src="_images/social-media-icons/google_logo_pop.png" width="44px"></button> 
+            <button class = "Socialicons" ><img src="_images/social-media-icons/facebook_logo_pop.png" width= "44px"></button> 
+            <button class = "Socialicons" ><img src="_images/social-media-icons/apple_logo_pop.png" width="44px"></button>
         </div>
     </div>
 
     <!--!!!!!!!!!!!!!!!!    BODY    !!!!!!!!!!!!!!!!-->
-    <div id="LstBookFn" class="Side_Body">
+    <div class="Side_Body">
         <div id ="SBMainFn" class="SideBar">
                 <button class="SBBtns">1</button>
                 <button class="SBBtns">2</button>
@@ -71,7 +67,8 @@
 
         </div>
         <button id="SBBtnFn" class="SBButton" onclick="SHButton()">
-            <img id="SBArrwIcn" src="LeftArrow.png" width="18px"></button>
+            <img id="SBArrwIcn" src="_images/side-bar-icons/close_button_icon.png" width="18px"></button>
+            <div id="Body"></div>
         <div class="SearchBody">
             <div class="SearchLabel"> You Searched About: <p id="BookSearched" style="width:bold;"></p> </div>
         </div>
