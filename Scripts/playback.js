@@ -5,7 +5,21 @@ myRec.interimResults = true; // allow partial recognition (faster, less accurate
 let mySpeech = new p5.Speech();
 mySpeech.setLang("ar-JO");
 mySpeech.speak("للتَحَكُّمْ فِي مُشَغِّلِ الْكُتُبْ، اِسْتَخْدِمِ الْأَوَامِرَ التَّالِيَة: شَغِّلْ: لِتَشْغِيلِ الْكِتَابْ. تَوَقَّفْ: لإيقاف الْكِتَابْ. التالي: لِتَشْغِيلِ الْكِتَابِ التالي. السَّابِقْ: لِتَشْغِيلِ الْكِتَابِ السَّابِقْ. اِرْفَعْ أَوْ عَلِّيْ: لِرَفَعِ الصَّوْتْ. اِخْفِضْ أَوْ وَطّيْ: لخفضِ الصَّوْتْ.");
-//mySpeech.onEnd = parseResult;
+
+let mySpeech_en = new p5.Speech();
+mySpeech_en.setLang("en-US");
+mySpeech_en.setVoice('Alice')
+
+
+
+function readText(string) {
+    mySpeech_en.speak(string)
+}
+
+
+function stopSpeak() {
+    mySpeech_en.stop();
+}
 
 function setup() {
     myRec.start(); // start engine
@@ -52,6 +66,8 @@ function parseResult() {
     else if (mostrecentword.indexOf("random") !== -1
         || mostrecentword.indexOf("shuffle") !== -1) { randomTrack() }
     console.log(mostrecentword);
+
+
 }
 
 let now_playing = document.querySelector('.now-playing');
@@ -223,5 +239,6 @@ function setUpdate() {
         curr_time.textContent = currentMinutes + ":" + currentSeconds;
         total_duration.textContent = durationMinutes + ":" + durationMinutes;
     }
+
 
 }
