@@ -1,14 +1,15 @@
-let myRec = new p5.SpeechRec('ar-JO', parseResult); // new P5.SpeechRec object
+let myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
 myRec.continuous = true; // do continuous recognition
 myRec.interimResults = true; // allow partial recognition (faster, less accurate)
 
-let mySpeech = new p5.Speech();
-mySpeech.setLang("ar-JO");
-mySpeech.speak("للتَحَكُّمْ فِي مُشَغِّلِ الْكُتُبْ، اِسْتَخْدِمِ الْأَوَامِرَ التَّالِيَة: شَغِّلْ: لِتَشْغِيلِ الْكِتَابْ. تَوَقَّفْ: لإيقاف الْكِتَابْ. التالي: لِتَشْغِيلِ الْكِتَابِ التالي. السَّابِقْ: لِتَشْغِيلِ الْكِتَابِ السَّابِقْ. اِرْفَعْ أَوْ عَلِّيْ: لِرَفَعِ الصَّوْتْ. اِخْفِضْ أَوْ وَطّيْ: لخفضِ الصَّوْتْ.");
+//let mySpeech = new p5.Speech();
+//mySpeech.setLang("ar-JO");
+//mySpeech.speak("للتَحَكُّمْ فِي مُشَغِّلِ الْكُتُبْ، اِسْتَخْدِمِ الْأَوَامِرَ التَّالِيَة: شَغِّلْ: لِتَشْغِيلِ الْكِتَابْ. تَوَقَّفْ: لإيقاف الْكِتَابْ. التالي: لِتَشْغِيلِ الْكِتَابِ التالي. السَّابِقْ: لِتَشْغِيلِ الْكِتَابِ السَّابِقْ. اِرْفَعْ أَوْ عَلِّيْ: لِرَفَعِ الصَّوْتْ. اِخْفِضْ أَوْ وَطّيْ: لخفضِ الصَّوْتْ.");
 
 let mySpeech_en = new p5.Speech();
 mySpeech_en.setLang("en-US");
-mySpeech_en.setVoice('Alice')
+mySpeech_en.setVoice('Alice');
+mySpeech_en.speak("To control the book player, use the following commands: play, or on, or resume: to play the book. stop, or of, or pause: to stop the book. Next: To play the next book. Previous: To play the previous book. Up, or raise: to raise the volume. down, or low: to lower the volume");
 
 
 
@@ -53,11 +54,13 @@ function parseResult() {
     ) { repeatTrack() }
     else if (mostrecentword.indexOf("up") !== -1
         || mostrecentword.indexOf("ارفع") !== -1
+        || mostrecentword.indexOf("raise") !== -1
         || mostrecentword.indexOf("علي") !== -1
     ) { volumeUp() }
     else if (mostrecentword.indexOf("down") !== -1
         || mostrecentword.indexOf("خفض") !== -1
         || mostrecentword.indexOf("اخفض") !== -1
+        || mostrecentword.indexOf("low") !== -1
         || mostrecentword.indexOf("وطي") !== -1
     ) { volumeDown() }
     else if (
@@ -65,6 +68,7 @@ function parseResult() {
         || mostrecentword.indexOf("صامت") !== -1) { muteUnmute() }
     else if (mostrecentword.indexOf("random") !== -1
         || mostrecentword.indexOf("shuffle") !== -1) { randomTrack() }
+    else if (mostrecentword.indexOf("max") !== -1) { hakim() }
     console.log(mostrecentword);
 
 
@@ -218,6 +222,11 @@ function muteUnmute() {
     // }
     volume_slider.value = Number(curr_track.volume * 100);
     console.log('volume set to: ' + curr_track.volume)
+}
+
+function hakim() {  // max volume (copywrite for hakim)
+    curr_track.volume = 1;
+    volume_slider.value = Number(curr_track.volume * 100);
 }
 
 function setUpdate() {

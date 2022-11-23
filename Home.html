@@ -22,9 +22,7 @@
 
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
     <div class="HeaderBar">
-        <p class="HeaderText" role="button" onclick="visitPage('home.html')" onmouseover="readText(this.innerText)"
-            onmouseleave="stopSpeak()">Blind's
-            Library</p>
+        <p class="HeaderText" role="button" onclick="visitPage('home.html')">Blind's Library</p>
         <div class="SearchBar">
             <input id="SrchBoxFn" class="SearchTextBox" type="search" onmouseover="readText('Search bar')"
                 onmouseleave="stopSpeak()">
@@ -88,28 +86,31 @@
         <div id="Body" class="ListBooks">
             <div class="NovelsBooks">
                 <div class="CategoryHeader" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                    <p class="CategoryName">POEMS</p>
+                    <p class="CategoryName">POLICY</p>
                 </div>
                 <div class="CategoryContents">
-                    <div class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                        <img class="BookCover" src="Book3thumb.jpg">
+                    <div class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()"
+                        onclick="visitPage('book0001.html')">
+                        <img class="BookCover" src="_images/playback_images/3abqaryat_asseddeeq.jpg">
                         <div class="BookInfo">
-                            <p class="BookName">Poem By Shakespeares</p>
-                            <p class="BookDescription">This Poem I don't know anything about it.</p>
+                            <p class="BookName">The genius of As-seddeeq</p>
+                            <p class="BookDescription">Talks About Abu Bakir Assiddiq Life</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="HistoryBooks">
-                <div class="CategoryHeader" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                    <p class="CategoryName">HISTORY</p>
+                <div class="CategoryHeader" onmouseover="readText('Human Development')" onmouseleave="stopSpeak()">
+                    <p class="CategoryName">H. DEVELOPMENT</p>
                 </div>
                 <div class="CategoryContents">
-                    <div class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                        <img class="BookCover" src="_images/_un-optimized/books-cover/Book4thumb.jpg">
+                    <div class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()"
+                        onclick="visitPage('book0001.html')">
+                        <img class="BookCover" src="_images/playback_images/ThePowerOfHabit.jpg">
                         <div class="BookInfo">
-                            <p class="BookName">The Guns of August</p>
-                            <p class="BookDescription">This Book Talking About History.. its just a lying dont trust it
+                            <p class="BookName">The Power of Habit</p>
+                            <p class="BookDescription">This Book Talking About How to develop your life.. its just a
+                                lying dont trust it
                             </p>
                         </div>
                     </div>
@@ -159,18 +160,25 @@
 
     <script>
 
-        let mySpeech = new p5.Speech();
-        mySpeech.setLang("ar-JO");
-        mySpeech.speak("أهلًا بك في الصفحة الرئيسية للمكتبة، بإمكانك تمرير الفأرة للتعرف على المحتويات");
-
         let mySpeech_en = new p5.Speech();
         mySpeech_en.setLang("en-US");
         mySpeech_en.setVoice('Alice')
+        mySpeech_en.speak("Welcome to the library home page, you can hover your mouse to view the contents")
+
+        let myRec = new p5.SpeechRec('en-US', fun1);
+        myRec.continuous = true;
+        // myRec.interimResults = true;
+        myRec.start();
+
+        function fun1() {
+            console.log(myRec.resultString)
+
+        }
 
 
 
-        function readText(string) {
-            mySpeech_en.speak(string)
+        function readText(text) {
+            mySpeech_en.speak(text)
         }
 
 

@@ -1,8 +1,8 @@
-.ListenBody{
+.ListenBody {
     min-width: 450px;
     user-select: none;
     position: fixed;
-    top: 25%;
+    top: 5%;
     left: 25%;
     margin-left: 150px;
     display: grid;
@@ -11,33 +11,32 @@
 
     width: 50%;
     height: fit-content;
-    
+
     text-align: center;
 
     background-color: white;
 
-    
-    
-   
-    
+
+
+
+
     box-shadow: rgb(24, 103, 100) 5px 5px 20px;
     border-radius: 35px;
 }
-@media d {
-    
-}
 
-.RangeStyle{
+@media d {}
+
+.RangeStyle {
     width: 70%;
     margin: 0px 15px;
 }
 
-.ListenImg{
+.ListenImg {
     scale: 90%;
     margin-top: 10px;
 }
 
-.Buttons{
+.Buttons {
     width: 100%;
 
     background-color: rgb(27, 200, 212);
@@ -45,7 +44,7 @@
     border-radius: 0px 0px 35px 35px;
 }
 
-.ButtonsPrNxt{
+.ButtonsPrNxt {
     cursor: pointer;
     scale: 70%;
     margin: 15px 15px;
@@ -53,16 +52,19 @@
     background-color: white;
     border-radius: 35px;
 }
-.ButtonsPrNxt:hover{
+
+.ButtonsPrNxt:hover {
     scale: 80%;
     background-color: rgb(250, 250, 250);
     box-shadow: rgb(77, 149, 149) -1px 0px 5px;
 }
-.ButtonsPrNxt:active{
+
+.ButtonsPrNxt:active {
     scale: 70%;
     box-shadow: rgb(77, 149, 149) -1px 0px 5px;
 }
-.ButtonsPlSt{
+
+.ButtonsPlSt {
     cursor: pointer;
     scale: 90%;
     margin: 15px 10px;
@@ -70,13 +72,15 @@
     background-color: white;
     border-radius: 5px;
 }
-.ButtonsPlSt:hover{
+
+.ButtonsPlSt:hover {
     scale: 100%;
     background-color: rgb(250, 250, 250);
     box-shadow: rgb(77, 149, 149) -1px 0px 5px;
     border-radius: 10px;
 }
-.ButtonsPlSt:active{
+
+.ButtonsPlSt:active {
     scale: 90%;
     box-shadow: rgb(77, 149, 149) -1px 0px 5px;
 }
