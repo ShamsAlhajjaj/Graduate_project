@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="css/pop_up.css">
     <link rel="stylesheet" href="css/side_bar.css">
 
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');</style>
+
     <script src="scripts/header.js"></script>
     <script src="scripts/side_bar.js"></script>
     <script src="scripts/tests.js"></script>
+    <script src="scripts/main_func.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
@@ -18,11 +21,11 @@
 
 </head>
 
-<body style="margin: 0; background-color:  rgb(10, 200, 170);">
+<body style="margin: 0; background: linear-gradient(320deg, #42E695, #3BB2B8)">
 
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
     <div class="HeaderBar">
-        <p class="HeaderText" role="button" onclick="visitPage('home.html')">Blind's Library</p>
+        <p class="HeaderText" role="button" onclick="visitPage('home.html')" onmouseover="readText('Go to the home page')" onmouseleave="stopSpeak()">Blind's Library</p>
         <div class="SearchBar">
             <input id="SrchBoxFn" class="SearchTextBox" type="search" onmouseover="readText('Search bar')"
                 onmouseleave="stopSpeak()">
@@ -71,93 +74,58 @@
     <div class="Side_Body">
         <div id="SBMainFn" class="SideBar">
             <button class="SBBtns" onclick="visitPage('home.html')" onmouseover="readText(this.innerText)"
-                onmouseleave="stopSpeak()">Main Page</button>
-            <button class="SBBtns">2</button>
-            <button class="SBBtns">3</button>
-            <button class="SBBtns">4</button>
-            <button class="SBBtns">5</button>
-            <button class="SBBtns">6</button>
-            <button class="SBBtns">7</button>
-            <button class="SBBtns">8</button>
-
+                onmouseleave="stopSpeak()">Home Page</button>
+            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Categories</button>
+            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Advanced Search</button>
+            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Request a Book</button>
+            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Join Us As a Volunteer</button>
+            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">About Us</button>
+            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Help</button>
         </div>
         <button id="SBBtnFn" class="SBButton" onclick="SHButton()">
             <img id="SBArrwIcn" src="_images/side-bar-icons/close_button_icon.png" width="18px"></button>
-        <div id="Body" class="ListBooks">
-            <div class="NovelsBooks">
-                <div class="CategoryHeader" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                    <p class="CategoryName">POLICY</p>
-                </div>
-                <div class="CategoryContents">
-                    <div class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()"
-                        onclick="visitPage('book0001.html')">
-                        <img class="BookCover" src="_images/playback_images/3abqaryat_asseddeeq.jpg">
-                        <div class="BookInfo">
-                            <p class="BookName">The genius of As-seddeeq</p>
-                            <p class="BookDescription">Talks About Abu Bakir Assiddiq Life</p>
-                        </div>
-                    </div>
-                </div>
+    </div>
+        
+    <div id="Body" class="ListBooks">
+
+        <div id="Book001" class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()" onclick="visitPage('listening.html')">
+            <img class="BookCover" src="_images/playback_images/3abqaryat_asseddeeq.jpg">
+            <div class="BookInfo">
+                <p class="BookName">The genius of As-seddeeq</p>
+                <p class="BookDescription">Talks About Abu Bakir Assiddiq Life</p>
             </div>
-            <div class="HistoryBooks">
-                <div class="CategoryHeader" onmouseover="readText('Human Development')" onmouseleave="stopSpeak()">
-                    <p class="CategoryName">H. DEVELOPMENT</p>
-                </div>
-                <div class="CategoryContents">
-                    <div class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()"
-                        onclick="visitPage('book0001.html')">
-                        <img class="BookCover" src="_images/playback_images/ThePowerOfHabit.jpg">
-                        <div class="BookInfo">
-                            <p class="BookName">The Power of Habit</p>
-                            <p class="BookDescription">This Book Talking About How to develop your life.. its just a
-                                lying dont trust it
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        </div>
+                
+        <div id="Book002" class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()" onclick="visitPage('listening.html')">
+            <img class="BookCover" src="_images/playback_images/ThePowerOfHabit.jpg">
+            <div class="BookInfo">
+                <p class="BookName">The Power of Habit</p>
+                <p class="BookDescription">This Book Talking About How to develop your life.. its just a lying dont trust it</p>
             </div>
-            <div class="PoemsBooks">
-                <div class="CategoryHeader" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                    <p class="CategoryName">POEMS</p>
-                </div>
-                <div class="CategoryContents">
-                    <div id="Book001" class="Book" onclick="visitPage('book0001.html')"
-                        onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                        <img class="BookCover" src="_images/_un-optimized/books-cover/Book3thumb.jpg">
-                        <div class="BookInfo">
-                            <p class="BookName">Poem By Shakespeares</p>
-                            <p class="BookDescription">This Poem I don't know anything about it.</p>
-                        </div>
-                    </div>
-                </div>
+        </div>
+                
+        <div id="Book003" class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()" onclick="visitPage('listening.html')">
+            <img class="BookCover" src="_images/_un-optimized/books-cover/Book3thumb.jpg">
+            <div class="BookInfo">
+                <p class="BookName">Poem By Shakespeares</p>
+                <p class="BookDescription">This Poem I don't know anything about it.</p>
             </div>
-            <div class="NovelsBooks">
-                <div class="CategoryHeader" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                    <p class="CategoryName">NOVELS</p>
-                </div>
-                <div class="CategoryContents">
-                    <div class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                        <img class="BookCover" src="_images/_un-optimized/books-cover/Book1thumb.jpg">
-                        <div class="BookInfo">
-                            <p class="BookName">Harry Potter and the Philosopher's Stone</p>
-                            <p class="BookDescription">This Novel Talking about the Mothers Hackers Called Magicians.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()">
-                        <img class="BookCover" src="_images/_un-optimized/books-cover/Book2thumb.jpg">
-                        <div class="BookInfo">
-                            <p class="BookName">Sherlock Holmes: A Study in Scarlet</p>
-                            <p class="BookDescription">This Novel Talking about the
-                                Detective Sherlock Holmes who you
-                                should know about him bro.</p>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        
+        <div id="Book004" class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()" onclick="visitPage('listening.html')">
+            <img class="BookCover" src="_images/_un-optimized/books-cover/Book2thumb.jpg">
+            <div class="BookInfo">
+                <p class="BookName">Sherlock Holmes: A Study in Scarlet</p>
+                <p class="BookDescription">This Novel Talking about the Detective Sherlock Holmes who you should know about him bro.</p>
             </div>
         </div>
     </div>
-
     <script>
 
         let mySpeech_en = new p5.Speech();
@@ -185,8 +153,6 @@
         function stopSpeak() {
             mySpeech_en.stop();
         }
-
-
     </script>
 </body>
 

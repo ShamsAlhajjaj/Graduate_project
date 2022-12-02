@@ -1,7 +1,3 @@
-function visitPage(stringLink){
-    window.location= stringLink;    
-}
-
 function searchBox(){
     let searchedText = document.getElementById("SrchBoxFn").value;
     if (searchedText != '')
