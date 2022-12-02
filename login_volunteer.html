@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <title>Blind's Library - About Us</title>
-    <link rel="stylesheet" href="css/about_us.css">
+    <title>Blind's Library - Login (Volunteer)</title>
+    <link rel="stylesheet" href="css/login_volunteer.css">
     <link rel="stylesheet" href="css/header_styles.css">
     <link rel="stylesheet" href="css/pop_up.css">
     <link rel="stylesheet" href="css/side_bar.css">
@@ -69,25 +69,40 @@
     </div>
 
     <!--!!!!!!!!!!!!!!!!    BODY    !!!!!!!!!!!!!!!!-->
-    <div class="Side_Body">
-        <div id="SBMainFn" class="SideBar">
-            <button class="SBBtns" onclick="visitPage('home.html')" onmouseover="readText(this.innerText)"
-                onmouseleave="stopSpeak()">Home Page</button>
-            <button class="SBBtns" onclick="visitPage('categories.html')" onmouseover="readText(this.innerText)"
-            onmouseleave="stopSpeak()">Categories</button>
-            <button class="SBBtns" onclick="visitPage('advance_search.html')" onmouseover="readText(this.innerText)"
-            onmouseleave="stopSpeak()">Advanced Search</button>
-            <button class="SBBtns" onclick="visitPage('request_book.html')" onmouseover="readText(this.innerText)"
-            onmouseleave="stopSpeak()">Request a Book</button>
-            <button class="SBBtns" onclick="visitPage('login_volunteer.html')" onmouseover="readText(this.innerText)"
-            onmouseleave="stopSpeak()">Join Us As a Volunteer</button>
-            <button class="SBBtns" onclick="visitPage('about_us.html')" onmouseover="readText(this.innerText)"
-            onmouseleave="stopSpeak()">About Us</button>
-            <button class="SBBtns" onclick="visitPage('help.html')" onmouseover="readText(this.innerText)"
-            onmouseleave="stopSpeak()">Help</button>
+
+    <div class="MainDiv">
+        <div class="SignUpSide">
+            <p style="font-size: 60px;">Sign up</p>    
+                <div class="FNname">
+                    <input id='NewUserFN' class="TextboxsPopUp" type="text" placeholder="First Name"> 
+                    <input id= 'NewUserLN' class="TextboxsPopUp" type="text" placeholder="Last Name">
+                </div>
+                <input id='NewEmail' class="TextboxsPopUp" type="text" placeholder="Email"> 
+                <div>
+                <input id= 'NewPassword' class="TextboxsPopUp" type="password" placeholder="Password">
+                <input id= 'ReNewPassword' class="TextboxsPopUp" type="password" placeholder="Confirm Password">
+    
+                </div>
+                <div>
+                    <button class="SignUpButton" onclick="SignUpCheak()">Trial Task</button>
+                </div>
         </div>
-        <button id="SBBtnFn" class="SBButton" onclick="SHButton()">
-            <img id="SBArrwIcn" src="_images/side-bar-icons/close_button_icon.png" width="18px"></button>
+        <div class="LoginSide">
+            <p style="font-size: 60px;">Login</p>
+            <div>
+                <input id= 'Email' class="TextboxsPopUp" type="text" placeholder="Email"> 
+                <input id= 'Password' class="TextboxsPopUp" type="password" placeholder="Password">
+            </div>
+            <div>
+                <button class="LoginButton" onclick="LoginCheak()">Login</button>
+            </div>
+            <p> or Login using your accounts: </p>
+            <div class="IconsMargin"> 
+                <button class = "Socialicons" ><img src="_images/social-media-icons/google_logo_72.png" width="38px"></button> 
+                <button class = "Socialicons" ><img src="_images/social-media-icons/facebook_logo_72.png" width="42px"></button> 
+                <button class = "Socialicons" ><img src="_images/social-media-icons/apple_logo_pop.png" width="42px"></button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

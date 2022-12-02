@@ -1,4 +1,10 @@
+         
+        .mainBody{
+            margin: 0px;
+            background-color: rgb(30, 200, 170);
+        }
          .ListBooks{
+            height: 100%;
             padding-top: 300px;
             padding-left: 280px;
             display: grid;

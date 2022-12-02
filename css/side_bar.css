@@ -1,5 +1,5 @@
 .SideBar{
-    row-gap: 10px;
+    row-gap: 2px;
     opacity: 1;
     z-index: 99;
     position: fixed;
@@ -10,8 +10,8 @@
     left: 0px;
     width: 240px;
     height:80%;
-    background-color:transparent;
     transition: 1s;
+    border-bottom: #2ba984 solid 1px;
 }
 
 .SBButton{
@@ -29,23 +29,25 @@
 }
 .SBBtns{
     cursor: pointer;
+    font-size: 15px;
     color: white;
     text-shadow: black 1px 2px 3px;
     height: inherit;
     border: 0px;
-    background-color: rgb(30, 235, 200);;
     border-style: solid;
+    background:linear-gradient(230deg, #0bffcd, #0abbb8);
     border-radius: 4px;
-    transition: 0.15s;
+    transition: 0.2s;
 }
 .SBBtns:hover{
-    color: black;
-    text-shadow: white 1px 2px 3px;
+    color: white;
+    text-shadow: black 1px 2px 3px;
     font-size: 18px;
     border-style: solid;
-    background-color: rgb(195, 245, 230);
+    background:linear-gradient(210deg, #00f0cd, #00bbb8);
     box-shadow: #3f7964 3px 3px 3px;
     border-radius: 25px;
+    transform: skew(10deg);
 }
 .SBBtns:active{
     background-color: rgb(167, 216, 201);

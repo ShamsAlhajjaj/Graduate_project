@@ -1,0 +1,174 @@
+.MainDiv{
+    user-select: none;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 30px;
+    width: 100%;
+    height: 1010px;
+    padding-bottom: 70px ;
+    align-items: center;
+    text-align: center;
+}
+
+.MainDiv .TextboxsPopUp{
+    margin: 0px 0px 16px 0px;
+    border-radius:30px;
+    width:100%;
+    height:35px;
+    font-size: 20px;
+    font-family:Calibri;
+    text-align: center;
+}
+.SignUpSide{
+    display: grid;
+    grid-template-rows: 200px 2fr 2fr 3fr 150px;
+    font-family: Cambria;
+    margin-left: 40px;
+    padding: 0px 80px;
+    height:800px;
+    font-size: 35px;
+    background-color: white;
+    border-radius: 25px;
+    min-width: 280px;
+}
+
+
+.SignUpSide .TextboxsPopUp{
+    margin: 0px 0px 16px 0px;
+    border-radius:30px;
+    width:100%;
+    height:50px;
+    font-size: 20px;
+    font-family:Calibri;
+    text-align: center;
+}
+
+.FNname{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 3%;
+}
+.LoginSide{
+    display: grid;
+    grid-template-rows: 250px 1fr 1fr 1fr 1fr;
+    font-family: Cambria;
+    margin-right: 40px;
+    padding: 0px 80px;
+    height:800px;
+    font-size: 35px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.SignUpSide .SignUpButton{
+    height: 50px;
+    width: 300px;
+    font-size: 25px;
+    border-radius: 26px;
+    background-color: rgb(50, 200, 120);
+    color: white;
+}
+.SignUpSide .SignUpButton:active{
+    color: black;
+}
+
+
+.SignUpSide .SignUpButton:hover{
+    height: 50px;
+    width: 390px;
+    border-radius: 25px;
+}
+
+.LoginSide .LoginButton{
+    height: 50px;
+    width: 160px;
+    font-size: 25px;
+    border-radius: 26px;
+    background-color: rgb(247, 49, 247);
+}
+
+.LoginSide .LoginButton:hover{
+    height: 50px;
+    width: 190px;
+    border-radius: 25px;
+}
+
+.IconsMargin{
+    display: grid;
+    height: fit-content;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.LoginSide .Socialicons {
+    margin: 0px 25px;
+    padding: 0;
+    user-select: none;
+    cursor: pointer;
+    scale: 150%;
+    border: 0;
+    background-color: transparent;
+    transition: 0.15s;
+}
+.LoginSide .Socialicons:hover{
+    scale: 200%;
+}
+.LoginSide .Socialicons:active{
+    scale:170%;
+}
+
+@media (max-width: 1355px) {
+    .MainDiv{
+        padding-top: 150px;
+        padding-bottom: 0px;
+        column-gap: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .SignUpSide{
+        margin: 0px;
+        padding: 0px 100px;
+        height:950px;
+    }
+    .SignUpSide .TextboxsPopUp{
+        margin: 0px 0px 16px 0px;
+        border-radius:30px;
+        width:100%;
+        height:50px;
+        font-size: 30px;
+        font-family:Calibri;
+        text-align: center;
+    }
+    .SignUpSide .SignUpButton{
+        font-size: 30px;
+    }
+    .LoginSide{
+        margin: 0px;
+        padding: 0px 100px;
+        height: 950px;
+    }
+    .LoginSide .TextboxsPopUp{
+        margin: 0px 0px 16px 0px;
+        border-radius:30px;
+        width:100%;
+        height:50px;
+        font-size: 30px;
+        font-family:Calibri;
+        text-align: center;
+    }
+    .LoginSide .LoginButton{
+        font-size: 30px;
+    }
+    .LoginSide .Socialicons {
+        scale: 200%;
+    }
+    .LoginSide .Socialicons:hover{
+        scale: 240%;
+    }
+    .LoginSide .Socialicons:active{
+        scale: 220%;
+    }
+}

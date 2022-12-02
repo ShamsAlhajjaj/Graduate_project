@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Blind's Library</title>
-    <link rel="stylesheet" href="css/home.css">
+    <title>Blind's Library - Search Results</title>
+    <link rel="stylesheet" href="css/search_results.css">
     <link rel="stylesheet" href="css/header_styles.css">
     <link rel="stylesheet" href="css/pop_up.css">
     <link rel="stylesheet" href="css/side_bar.css">
@@ -55,20 +55,25 @@
 
     <!--!!!!!!!!!!!!!!!!    BODY    !!!!!!!!!!!!!!!!-->
     <div class="Side_Body">
-        <div id ="SBMainFn" class="SideBar">
-                <button class="SBBtns">1</button>
-                <button class="SBBtns">2</button>
-                <button class="SBBtns">3</button>
-                <button class="SBBtns">4</button>
-                <button class="SBBtns">5</button>
-                <button class="SBBtns">6</button>
-                <button class="SBBtns">7</button>
-                <button class="SBBtns">8</button>
-
+        <div id="SBMainFn" class="SideBar">
+            <button class="SBBtns" onclick="visitPage('home.html')" onmouseover="readText(this.innerText)"
+                onmouseleave="stopSpeak()">Home Page</button>
+            <button class="SBBtns" onclick="visitPage('categories.html')" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Categories</button>
+            <button class="SBBtns" onclick="visitPage('advance_search.html')" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Advanced Search</button>
+            <button class="SBBtns" onclick="visitPage('request_book.html')" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Request a Book</button>
+            <button class="SBBtns" onclick="visitPage('login_volunteer.html')" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Join Us As a Volunteer</button>
+            <button class="SBBtns" onclick="visitPage('about_us.html')" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">About Us</button>
+            <button class="SBBtns" onclick="visitPage('help.html')" onmouseover="readText(this.innerText)"
+            onmouseleave="stopSpeak()">Help</button>
         </div>
         <button id="SBBtnFn" class="SBButton" onclick="SHButton()">
             <img id="SBArrwIcn" src="_images/side-bar-icons/close_button_icon.png" width="18px"></button>
-            <div id="Body"></div>
+    </div>
         <div class="SearchBody">
             <div class="SearchLabel"> You Searched About: <p id="BookSearched" style="width:bold;"></p> </div>
         </div>

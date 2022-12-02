@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="css/pop_up.css">
     <link rel="stylesheet" href="css/side_bar.css">
 
-    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');</style>
-
     <script src="scripts/header.js"></script>
     <script src="scripts/side_bar.js"></script>
     <script src="scripts/tests.js"></script>
@@ -21,7 +19,7 @@
 
 </head>
 
-<body style="margin: 0; background: linear-gradient(320deg, #42E695, #3BB2B8)">
+<body class="mainBody" style="margin: 0; background-color: rgb(30, 200, 170);">
 
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
     <div class="HeaderBar">
@@ -29,7 +27,7 @@
         <div class="SearchBar">
             <input id="SrchBoxFn" class="SearchTextBox" type="search" onmouseover="readText('Search bar')"
                 onmouseleave="stopSpeak()">
-            <img class="SearchButton" src="_images/search-button-icon/search_button_icon.png" width="32px" role="button"
+            <img id="SrchBooxBtnFn" class="SearchButton" src="_images/search-button-icon/search_button_icon.png" width="32px" role="button"
                 onclick="searchBox()" onmouseover="readText('Search button')" onmouseleave="stopSpeak()">
         </div>
         <div id="UsrInfoFn" class="UserInfo">
@@ -54,7 +52,7 @@
         </div>
 
         <div>
-            <button class="LoginButton" onclick="LoginCheak()" onmouseover="readText(this.innerText)"
+            <button id="loginbtn" class="LoginButton" onclick="LoginCheak()" onmouseover="readText(this.innerText)"
                 onmouseleave="stopSpeak()">Login</button><br><button class="SignUpButton"
                 onclick="visitPage('SignUp_Login.html')" onmouseover="readText(this.innerText)"
                 onmouseleave="stopSpeak()">Sign Up</button>
@@ -75,17 +73,17 @@
         <div id="SBMainFn" class="SideBar">
             <button class="SBBtns" onclick="visitPage('home.html')" onmouseover="readText(this.innerText)"
                 onmouseleave="stopSpeak()">Home Page</button>
-            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            <button class="SBBtns" onclick="visitPage('categories.html')" onmouseover="readText(this.innerText)"
             onmouseleave="stopSpeak()">Categories</button>
-            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            <button class="SBBtns" onclick="visitPage('advance_search.html')" onmouseover="readText(this.innerText)"
             onmouseleave="stopSpeak()">Advanced Search</button>
-            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            <button class="SBBtns" onclick="visitPage('request_book.html')" onmouseover="readText(this.innerText)"
             onmouseleave="stopSpeak()">Request a Book</button>
-            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            <button class="SBBtns" onclick="visitPage('login_volunteer.html')" onmouseover="readText(this.innerText)"
             onmouseleave="stopSpeak()">Join Us As a Volunteer</button>
-            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            <button class="SBBtns" onclick="visitPage('about_us.html')" onmouseover="readText(this.innerText)"
             onmouseleave="stopSpeak()">About Us</button>
-            <button class="SBBtns" onmouseover="readText(this.innerText)"
+            <button class="SBBtns" onclick="visitPage('help.html')" onmouseover="readText(this.innerText)"
             onmouseleave="stopSpeak()">Help</button>
         </div>
         <button id="SBBtnFn" class="SBButton" onclick="SHButton()">
@@ -153,6 +151,32 @@
         function stopSpeak() {
             mySpeech_en.stop();
         }
+        
+        // ------------------------------------------"Enter Pressing" Scripts ------------------------------------------
+        document.getElementById("SrchBoxFn")
+            .addEventListener("keyup", function(event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.getElementById("SrchBooxBtnFn").click();
+                }
+            }
+            );
+            document.getElementById("Email")
+            .addEventListener("keyup", function(event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.getElementById("loginbtn").click();
+                }
+            }
+            );
+            document.getElementById("Password")
+            .addEventListener("keyup", function(event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.getElementById("loginbtn").click();
+                }
+            }
+            );
     </script>
 </body>
 

@@ -2,49 +2,36 @@
 <html>
 
 <head>
-    <title>Book Playback</title>
-
+    <title>Blind's Library - Help</title>
+    <link rel="stylesheet" href="css/book_progress.css">
     <link rel="stylesheet" href="css/header_styles.css">
     <link rel="stylesheet" href="css/pop_up.css">
     <link rel="stylesheet" href="css/side_bar.css">
 
-
     <script src="scripts/header.js"></script>
     <script src="scripts/side_bar.js"></script>
-    <script src="scripts/Tests.js"></script>
+    <script src="scripts/tests.js"></script>
+    <script src="scripts/main_func.js"></script>
 
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/playback.css">
-    <script src="scripts/p5.speech.js" defer></script>
-    <script src="scripts/playback.js" defer></script>
-    <link rel="shortcut icon" href="_images/playback_images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
-
+    <script src="scripts/p5.speech.js"></script>
 
 </head>
 
-<body style="margin: 0; background: linear-gradient(320deg, #42E695, #3BB2B8);">
-
+<body class="mainBody" style="margin: 0; background-color: rgb(30, 200, 170);">
 
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
     <div class="HeaderBar">
-        <p class="HeaderText" role="button" onclick="visitPage('home.html')">Blind's
-            Library</p>
+        <p class="HeaderText" role="button" onclick="visitPage('home.html')" onmouseover="readText('Go to the home page')" onmouseleave="stopSpeak()">Blind's Library</p>
         <div class="SearchBar">
             <input id="SrchBoxFn" class="SearchTextBox" type="search" onmouseover="readText('Search bar')"
                 onmouseleave="stopSpeak()">
-            <img class="SearchButton" src="_images/search-button-icon/search_button_icon.png" width="32px" role="button"
+            <img id="SrchBooxBtnFn" class="SearchButton" src="_images/search-button-icon/search_button_icon.png" width="32px" role="button"
                 onclick="searchBox()" onmouseover="readText('Search button')" onmouseleave="stopSpeak()">
         </div>
         <div id="UsrInfoFn" class="UserInfo">
-            <button class="LoginHeader" onclick="visitPage('SignUp_Login.html')" onmouseover="readText(this.innerText)"
-                onmouseleave="stopSpeak()">Login</button>
+            <div></div>
             <button id="UsrIcnFn" class="UserIcon" onclick="openPopUP()" onmouseover="readText('User info')"
                 onmouseleave="stopSpeak()">
                 <img src="_images/guest-user-icon/guest_user_icon_transparent.png" width="32px">
@@ -64,7 +51,7 @@
         </div>
 
         <div>
-            <button class="LoginButton" onclick="LoginCheak()" onmouseover="readText(this.innerText)"
+            <button id="loginbtn" class="LoginButton" onclick="LoginCheak()" onmouseover="readText(this.innerText)"
                 onmouseleave="stopSpeak()">Login</button><br><button class="SignUpButton"
                 onclick="visitPage('SignUp_Login.html')" onmouseover="readText(this.innerText)"
                 onmouseleave="stopSpeak()">Sign Up</button>
@@ -101,63 +88,25 @@
         <button id="SBBtnFn" class="SBButton" onclick="SHButton()">
             <img id="SBArrwIcn" src="_images/side-bar-icons/close_button_icon.png" width="18px"></button>
     </div>
-    <div id="Body"></div>
-
-    <!--!!!!!!!!!!!!!!!!    PLAYER    !!!!!!!!!!!!!!!!-->
-    <div class="player">
-        <div class="wrapper">
-            <div class="details">
-                <div class="now-playing">PLAYING x OF y</div>
-                <div class="track-art"></div>
-                <div class="track-name">Track Name</div>
-                <div class="track-artist">Track Artist</div>
+    <div class="Progress">
+        <div class="ProgressHeader">
+            <img src="_images/_un-optimized/books-cover/Book2thumb.jpg" width="160px">
+            <div class="BookInfo">
+                <div id="idBookName">Sherlock Holes: A Study In Scarlet </div>
+                <div id="idBookVolunteer">no one working until now</div>
             </div>
-
-            <div class="slider_container" onmouseover="readText('time slider')" onmouseleave="stopSpeak()">
-                <div class="current-time">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-                <div class="total-duration">00:00</div>
-            </div>
-
-            <div class="slider_container" onmouseover="readText('Volume slider')" onmouseleave="stopSpeak()">
-                <i class="fa fa-volume-down"></i>
-                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-                <i class="fa fa-volume-up"></i>
-            </div>
-
-            <div class="buttons">
-                <div class="random-track" onclick="randomTrack()" onmouseover="readText('shuffle')"
-                    onmouseleave="stopSpeak()">
-                    <i class="fas fa-random fa-2x" title="random"></i>
-                </div>
-                <div class="prev-track" onclick="prevTrack()" onmouseover="readText('previous')"
-                    onmouseleave="stopSpeak()">
-                    <i class="fa fa-step-backward fa-2x"></i>
-                </div>
-                <div class="playpause-track" onclick="playpauseTrack()" onmouseover="readText('playpause')"
-                    onmouseleave="stopSpeak()">
-                    <i class="fa fa-play-circle fa-5x"></i>
-                </div>
-                <div class="next-track" onclick="nextTrack()" onmouseover="readText('next')" onmouseleave="stopSpeak()">
-                    <i class="fa fa-step-forward fa-2x"></i>
-                </div>
-                <div class="repeat-track" onclick="repeatTrack()" onmouseover="readText('repeat')"
-                    onmouseleave="stopSpeak()">
-                    <i class="fa fa-repeat fa-2x" title="repeat"></i>
-                </div>
-            </div>
-
-            <div id="wave">
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-            </div>
+        </div>
+        <div><p>Book Progress 0%</p></div>
+        <div class="Parts">
+            <input type="checkbox"> <span>Pages 0 - 10</span><span></span>
+            <input type="checkbox"> <span>Pages 10 - 20</span><span></span>
+            <input type="checkbox"> <span>Pages 20 - 30</span><span></span>
+            <input type="checkbox"> <span>Pages 30 - 40</span><span></span>
+        </div>
+        <div>
+            <button class="UploadButton">Upload Your work</button>
+            <button class="DownloadButton">Download the Book as PDF</button>
         </div>
     </div>
 </body>
-
 </html>

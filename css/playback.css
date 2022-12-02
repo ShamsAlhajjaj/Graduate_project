@@ -217,3 +217,16 @@ i.fa-step-backward {
 .stroke:nth-child(7) {
     animation-delay: 0s;
 }
+
+@media (max-width: 1600px) {
+    .wrapper {
+        scale: 0.9;
+    }
+}
+
+
+@media (max-width: 1355px) {
+    .wrapper {
+        scale: 0.75;
+    }
+}
