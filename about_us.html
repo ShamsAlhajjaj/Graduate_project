@@ -19,7 +19,8 @@
 
 </head>
 
-<body class="mainBody" style="margin: 0; background-color: rgb(30, 200, 170);">
+<body style="margin: 0;">
+    <div class="background" style="z-index:-99; position: fixed; top:0; left: 0; background:linear-gradient(0deg, #534666, #853065, #534666); width: 100%; height: 100%"></div>
 
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
     <div class="HeaderBar">
@@ -67,7 +68,7 @@
                     onmouseover="readText('Sign in with Apple ID')" onmouseleave="stopSpeak()"></button>
         </div>
     </div>
-
+    
     <!--!!!!!!!!!!!!!!!!    BODY    !!!!!!!!!!!!!!!!-->
     <div class="Side_Body">
         <div id="SBMainFn" class="SideBar">
@@ -85,9 +86,27 @@
             onmouseleave="stopSpeak()">About Us</button>
             <button class="SBBtns" onclick="visitPage('help.html')" onmouseover="readText(this.innerText)"
             onmouseleave="stopSpeak()">Help</button>
+            <div class="hola"></div>
         </div>
         <button id="SBBtnFn" class="SBButton" onclick="SHButton()">
             <img id="SBArrwIcn" src="_images/side-bar-icons/close_button_icon.png" width="18px"></button>
+    </div>
+    <div id="Body"></div>
+    <div class="MainBody" style="color: white; font-size: 30px;">
+        <div>
+                <img src="_images/hola/TTU_LOGO.png">
+        </div>
+        <div>
+            <p> This website was developed and designed by Tafila Technical University students as a graduation project
+
+                The whole story began when he discovered a strange device.. and then things took a strange turn.. You see him as an ordinary boy, but he hides secrets.. Ben 10</p>
+        </div>
+        <div>
+            <p>Shams</p>
+            <p>Shomlokh</p>
+            <p>Baraa</p>
+            <p>Eman</p>
+        </div>
     </div>
 </body>
 </html>

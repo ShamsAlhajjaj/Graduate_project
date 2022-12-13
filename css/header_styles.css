@@ -11,9 +11,9 @@
             display: grid;
             grid-template-columns: 250px 3fr 350px;
 
-            background-color: rgb(27, 255, 212);
+            background-color: #534666;
 
-            box-shadow: rgb(50, 150, 150) 0px 4px 15px;
+            box-shadow: rgb(60, 60, 60) 0px 4px 15px;
         }
 
 
@@ -103,7 +103,7 @@
 
             border-radius: 20px;
 
-            box-shadow: rgb(75, 175, 175) -1px 0px 8px;
+            box-shadow: rgb(60, 75, 75) -1px 0px 8px;
         }
         .SearchButton:active{
             cursor: pointer;
@@ -117,7 +117,7 @@
             border: 0px;
             border-radius: 17px;
 
-            box-shadow: rgb(175, 175, 175) -1px 0px 5px;
+            box-shadow: rgb(80, 95, 95) -1px 0px 5px;
             
             transition: 0.05s;
         }
@@ -146,7 +146,7 @@
             border: 0px;
             border-radius: 17px;
             
-            box-shadow: rgb(75, 175, 175) -2px 2px 5px;
+            box-shadow: rgb(60, 75, 75) -2px 2px 5px;
 
             transition: 0.15s;
         }
@@ -174,7 +174,7 @@
             border: 0px;
             border-radius: 17px;
 
-            box-shadow: rgb(75, 175, 175) -1px 0px 5px;
+            box-shadow: rgb(80, 95, 95) -1px 0px 5px;
 
             transition: 0.15s;
         }
@@ -187,7 +187,7 @@
             
             border-radius: 23px;
             
-            box-shadow: rgb(75, 175, 175) -1px 0px 8px;
+            box-shadow: rgb(80, 95, 95) -1px 0px 8px;
             
         }   
         .UserIcon:active{

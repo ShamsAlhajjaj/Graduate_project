@@ -2,7 +2,7 @@
     position: fixed;
     top: 30%;
     left: 25%;
-
+ 
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -19,7 +19,7 @@
     justify-self: center;
 
     border-radius: 30px;
-    scale: 160%;
+    scale: 130%;
 }
 .ProgressHeader{
     display: flex;

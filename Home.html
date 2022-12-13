@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="css/pop_up.css">
     <link rel="stylesheet" href="css/side_bar.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
     <script src="scripts/header.js"></script>
     <script src="scripts/side_bar.js"></script>
     <script src="scripts/tests.js"></script>
@@ -19,8 +23,8 @@
 
 </head>
 
-<body class="mainBody" style="margin: 0; background-color: rgb(30, 200, 170);">
-
+<body style="margin: 0;">
+    <div class="background" style="z-index:-99; position: fixed; top:0; left: 0; background:linear-gradient(0deg, #AC6675, #534666, #534666); width: 100%; height: 100%"></div>
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
     <div class="HeaderBar">
         <p class="HeaderText" role="button" onclick="visitPage('home.html')" onmouseover="readText('Go to the home page')" onmouseleave="stopSpeak()">Blind's Library</p>
@@ -85,6 +89,7 @@
             onmouseleave="stopSpeak()">About Us</button>
             <button class="SBBtns" onclick="visitPage('help.html')" onmouseover="readText(this.innerText)"
             onmouseleave="stopSpeak()">Help</button>
+            <div class="hola"></div>
         </div>
         <button id="SBBtnFn" class="SBButton" onclick="SHButton()">
             <img id="SBArrwIcn" src="_images/side-bar-icons/close_button_icon.png" width="18px"></button>

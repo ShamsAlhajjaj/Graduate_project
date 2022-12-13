@@ -9,11 +9,14 @@
     top: 68px;
     left: 0px;
     width: 240px;
-    height:80%;
+    height:100%;
     transition: 1s;
-    border-bottom: #2ba984 solid 1px;
+    border-bottom: #342616 solid 1px;
 }
-
+.hola{
+    background-color: #534666;
+    height: 1920px;
+}
 .SBButton{
     user-select: none;
     z-index: 99;
@@ -23,8 +26,8 @@
     left: 240px;
     height: 100%;
     border: 0;
-    background-color: rgb(27, 255, 212);
-    box-shadow: rgb(102, 102, 102) 1px 1px 8px;
+    background-color: #534666;
+    box-shadow: rgb(42, 42, 42) 1px 1px 8px;
     transition: 1s;
 }
 .SBBtns{
@@ -35,7 +38,7 @@
     height: inherit;
     border: 0px;
     border-style: solid;
-    background:linear-gradient(230deg, #0bffcd, #0abbb8);
+    background:linear-gradient(230deg, #534666, #382942);
     border-radius: 4px;
     transition: 0.2s;
 }
@@ -44,17 +47,17 @@
     text-shadow: black 1px 2px 3px;
     font-size: 18px;
     border-style: solid;
-    background:linear-gradient(210deg, #00f0cd, #00bbb8);
-    box-shadow: #3f7964 3px 3px 3px;
+    background:linear-gradient(210deg, #434666, #232630);
+    box-shadow: #3f1954 3px 3px 3px;
     border-radius: 25px;
     transform: skew(10deg);
 }
 .SBBtns:active{
-    background-color: rgb(167, 216, 201);
+    background-color: rgb(67, 16, 01);
     font-size: 20px;
 }
 .SBButton:active{
-    background-color: rgb(38, 248, 185);
+    background-color: rgb(48, 38, 65);
 }
 
 @media (max-width: 1355px) {
