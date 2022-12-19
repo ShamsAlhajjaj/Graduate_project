@@ -23,12 +23,14 @@
 
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
     <div class="HeaderBar">
-        <p class="HeaderText" role="button" onclick="visitPage('home.html')" onmouseover="readText('Go to the home page')" onmouseleave="stopSpeak()">Blind's Library</p>
+        <p class="HeaderText" role="button" onclick="visitPage('home.html')"
+            onmouseover="readText('Go to the home page')" onmouseleave="stopSpeak()">Blind's Library</p>
         <div class="SearchBar">
             <input id="SrchBoxFn" class="SearchTextBox" type="search" onmouseover="readText('Search bar')"
                 onmouseleave="stopSpeak()">
-            <img id="SrchBooxBtnFn" class="SearchButton" src="_images/search-button-icon/search_button_icon.png" width="32px" role="button"
-                onclick="searchBox()" onmouseover="readText('Search button')" onmouseleave="stopSpeak()">
+            <img id="SrchBooxBtnFn" class="SearchButton" src="_images/search-button-icon/search_button_icon.png"
+                width="32px" role="button" onclick="searchBox()" onmouseover="readText('Search button')"
+                onmouseleave="stopSpeak()">
         </div>
         <div id="UsrInfoFn" class="UserInfo">
             <button class="LoginHeader" onclick="visitPage('SignUp_Login.html')" onmouseover="readText(this.innerText)"
@@ -72,36 +74,40 @@
 
     <div class="MainDiv">
         <div class="SignUpSide">
-            <p style="font-size: 60px;">Sign up</p>    
-                <div class="FNname">
-                    <input id= 'NewUserFN' class="TextboxsPopUp" type="text" placeholder="First Name"> 
-                    <input id= 'NewUserLN' class="TextboxsPopUp" type="text" placeholder="Last Name">
-                </div>
-                <input id= 'NewEmail' class="TextboxsPopUp" type="text" placeholder="Email"> 
-                <div>
-                <input id= 'NewPassword' class="TextboxsPopUp" type="password" placeholder="Password">
-                <input id= 'ReNewPassword' class="TextboxsPopUp" type="password" placeholder="Confirm Password">
-                </div>
-                <div>
-                    <button class="SignUpButton" onclick="SignUpCheak()">Trial Task</button>
-                </div>
+            <p style="font-size: 60px;">Sign up</p>
+            <div class="FNname">
+                <input id='NewUserFN' class="TextboxsPopUp" type="text" placeholder="First Name">
+                <input id='NewUserLN' class="TextboxsPopUp" type="text" placeholder="Last Name">
+            </div>
+            <input id='NewEmail' class="TextboxsPopUp" type="text" placeholder="Email">
+            <div>
+                <input id='NewPassword' class="TextboxsPopUp" type="password" placeholder="Password">
+                <input id='ReNewPassword' class="TextboxsPopUp" type="password" placeholder="Confirm Password">
+            </div>
+            <div>
+                <button class="SignUpButton" onclick="SignUpCheak()">Trial Task</button>
+            </div>
         </div>
         <div class="LoginSide">
             <p style="font-size: 60px;">Login</p>
             <div>
-                <input id= 'Email' class="TextboxsPopUp" type="text" placeholder="Email"> 
-                <input id= 'Password' class="TextboxsPopUp" type="password" placeholder="Password">
+                <input id='Email' class="TextboxsPopUp" type="text" placeholder="Email">
+                <input id='Password' class="TextboxsPopUp" type="password" placeholder="Password">
             </div>
             <div>
                 <button class="LoginButton" onclick="LoginCheak()">Login</button>
             </div>
             <p> or Login using your accounts: </p>
-            <div class="IconsMargin"> 
-                <button class = "Socialicons" ><img src="_images/social-media-icons/google_logo_72.png" width="38px"></button> 
-                <button class = "Socialicons" ><img src="_images/social-media-icons/facebook_logo_72.png" width="42px"></button> 
-                <button class = "Socialicons" ><img src="_images/social-media-icons/apple_logo_pop.png" width="42px"></button>
+            <div class="IconsMargin">
+                <button class="Socialicons"><img src="_images/social-media-icons/google_logo_72.png"
+                        width="38px"></button>
+                <button class="Socialicons"><img src="_images/social-media-icons/facebook_logo_72.png"
+                        width="42px"></button>
+                <button class="Socialicons"><img src="_images/social-media-icons/apple_logo_pop.png"
+                        width="42px"></button>
             </div>
         </div>
     </div>
 </body>
+
 </html>
