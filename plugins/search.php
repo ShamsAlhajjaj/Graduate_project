@@ -6,8 +6,9 @@ try {
     echo $e->getMessage();
 }
 $value = "%%";
-if (isset($_GET['btn_search'])) {
+if (isset($_GET['btn_search']) && $_GET['search'] > 0) {
     $value = "%" . $_GET['search'] . "%";
+    echo "<script>console.log('" . 'you searched for: ' . $_GET['search'] . "')</script>";
 }
 
 $query = $db->prepare("SELECT * FROM books WHERE name LIKE :value");
