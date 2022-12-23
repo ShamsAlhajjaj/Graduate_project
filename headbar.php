@@ -5,7 +5,7 @@
         <input id="SrchBoxFn" class="SearchTextBox" type="search" onmouseover="readText('Search bar')"
             onmouseleave="stopSpeak()" name="search">
 
-        <button type="submit" name="btn_search"><img id="SrchBooxBtnFn" class="SearchButton"
+        <button type="submit" name="btn_search" id="search"><img id="SrchBooxBtnFn" class="SearchButton"
                 src="_images/search-button-icon/search_button_icon.png" width="32px" role="button" onclick="searchBox()"
                 onmouseover="readText('Search button')" onmouseleave="stopSpeak()"></button>
     </form>

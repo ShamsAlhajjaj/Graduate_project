@@ -31,9 +31,6 @@ function updateJSON($id)
     echo "<script>let book_list = " . json_encode($books) . ";</script>";
 }
 
-//echo "<script>function foo() { " . updateJSON($id) . " }</script>";
-
-
 
 function bookView($name, $des, $coverSrc, $id)
 {
@@ -43,7 +40,7 @@ function bookView($name, $des, $coverSrc, $id)
             onclick="storeBook(' . $id . ') ;visitPage(\'listening.php\')">
                 <img class="BookCover" src="' . $coverSrc . '">
                 <div class="BookInfo">
-                    <p class="BookName">' . $name . ' (' . $id . ')</p>
+                    <p class="BookName">' . $name . '</p>
                     <p class="BookDescription">' . $des . '</p>
                  </div>
             </div>';

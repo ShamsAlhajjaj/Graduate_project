@@ -63,13 +63,32 @@
     mySpeech_en.setVoice('Alice')
     //mySpeech_en.speak("Welcome to the library home page, you can hover your mouse to view the contents")
 
-    let myRec = new p5.SpeechRec('en-US', fun1);
+    function search(value) {
+        var button = document.getElementById('search');
+        var inputField = document.getElementById('SrchBoxFn');
+
+        inputField.value = value;
+        button.click();
+        console.log("search by voice ok!");
+    }
+
+
+
+    let myRec = new p5.SpeechRec('en-US', parseResult);
     myRec.continuous = true;
     // myRec.interimResults = true;
     myRec.start();
 
-    function fun1() {
-        console.log(myRec.resultString)
+    function parseResult() {
+        myRec.resultString
+        resultArray = myRec.resultString.split(" ");
+
+        console.log(resultArray.join(" "));
+
+        if (resultArray[0] == 'Search') {
+            resultArray.shift();
+            search(resultArray.join(" ").slice(0, -1));
+        }
 
     }
 
@@ -83,6 +102,9 @@
     function stopSpeak() {
         mySpeech_en.stop();
     }
+
+
+
 
     // ------------------------------------------"Enter Pressing" Scripts ------------------------------------------
     document.getElementById("SrchBoxFn")
