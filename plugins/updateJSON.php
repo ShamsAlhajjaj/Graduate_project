@@ -30,21 +30,3 @@ function updateJSON($id)
 
     echo "<script>let book_list = " . json_encode($books) . ";</script>";
 }
-
-//echo "<script>function foo() { " . updateJSON($id) . " }</script>";
-
-
-
-function bookView($name, $des, $coverSrc, $id)
-{
-
-    return
-        '<div id="' . $id . '" class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()"
-            onclick="storeBook(' . $id . ') ;visitPage(\'listening.php\')">
-                <img class="BookCover" src="' . $coverSrc . '">
-                <div class="BookInfo">
-                    <p class="BookName">' . $name . ' (' . $id . ')</p>
-                    <p class="BookDescription">' . $des . '</p>
-                 </div>
-            </div>';
-}

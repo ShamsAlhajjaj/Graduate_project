@@ -16,7 +16,19 @@
     <script src="scripts/side_bar.js"></script>
     <script src="scripts/tests.js"></script>
     <script src="scripts/main_func.js"></script>
+    <script>
+    function storeBook(id) {
+        x = fetch('books.json')
+            .then(response => response.json())
+            .then(data => {
+                localStorage.setItem("name", data[id - 1].name)
+                localStorage.setItem("img", data[id - 1].img)
+                localStorage.setItem("artist", data[id - 1].artist)
+                localStorage.setItem("book", data[id - 1].book)
+            });
 
+    }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
     <script src="scripts/p5.speech.js"></script>

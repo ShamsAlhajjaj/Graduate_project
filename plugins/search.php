@@ -13,12 +13,35 @@ if (isset($_GET['btn_search'])) {
 $query = $db->prepare("SELECT * FROM books WHERE name LIKE :value");
 $query->bindParam("value", $value);
 $query->execute();
+$books = array();
 
 foreach ($query as $data) {
 
     $name = $data['name'];
     $discription = $data['dis'];
     $cover = $data['cover'];
+    $id = $data['id'];
 
-    echo bookView($name, $discription, $cover);
+    $book = array(
+        'img' => $data['cover'],
+        'name' => $data['name'],
+        'artist' => $data['author'],
+        'book' => $data['dir'],
+        'description' => $data['dis'],
+
+    );
+    array_push($books, $book);
+
+    echo bookView($name, $discription, $cover, $id);
 }
+
+
+$json = json_encode($books);
+
+file_put_contents('books.json', $json);
+
+?>
+
+<script>
+storeBook(1)
+</script>
