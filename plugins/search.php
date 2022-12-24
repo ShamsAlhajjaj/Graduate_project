@@ -9,7 +9,7 @@ function bookView($name, $des, $coverSrc, $id)
             onclick="openBook(' . $id . ')">
                 <img class="BookCover" src="' . $coverSrc . '">
                 <div class="BookInfo">
-                    <p class="BookName">' . $name . $id . '</p>
+                    <p class="BookName">' . $name . '</p>
                     <p class="BookDescription">' . $des . '</p>
                  </div>
             </div>';
