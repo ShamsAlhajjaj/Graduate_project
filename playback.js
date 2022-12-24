@@ -1,6 +1,7 @@
 let myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
 myRec.continuous = true; // do continuous recognition
 myRec.interimResults = true; // allow partial recognition (faster, less accurate)
+myRec.timeout = 100000;
 
 //let mySpeech = new p5.Speech();
 //mySpeech.setLang("ar-JO");
@@ -42,11 +43,11 @@ function parseResult() {
         || mostrecentword.indexOf("توقف") !== -1
         || mostrecentword.indexOf("وقف") !== -1
     ) { pauseTrack() }
-    else if (mostrecentword.indexOf("next") !== -1
-        || mostrecentword.indexOf("التالي") !== -1) { nextTrack() }
-    else if (mostrecentword.indexOf("previous") !== -1
-        || mostrecentword.indexOf("back") !== -1
-        || mostrecentword.indexOf("السابق") !== -1) { prevTrack() }
+    // else if (mostrecentword.indexOf("next") !== -1
+    //     || mostrecentword.indexOf("التالي") !== -1) { nextTrack() }
+    // else if (mostrecentword.indexOf("previous") !== -1
+    //     || mostrecentword.indexOf("back") !== -1
+    //     || mostrecentword.indexOf("السابق") !== -1) { prevTrack() }
     else if (mostrecentword.indexOf("repeat") !== -1
         || mostrecentword.indexOf("reply") !== -1
         || mostrecentword.indexOf("تكرار") !== -1
@@ -95,14 +96,26 @@ let isPlaying = false;
 let isRandom = false;
 let updateTimer;
 
-let book_list = [{
-    "name": localStorage.getItem('name'),
-    "img": localStorage.getItem('img'),
-    "book": localStorage.getItem('book'),
-    "artist": localStorage.getItem('artist')
+
+
+
+
+// let book_list = [{                //use local storage
+//     "name": localStorage.getItem('name'),
+//     "img": localStorage.getItem('img'),
+//     "book": localStorage.getItem('book'),
+//     "artist": localStorage.getItem('artist')
+// }];
+
+
+let book_list = [{          //get data from cookies
+    "name": getCookie("name"),
+    "img": getCookie("img"),
+    "book": getCookie("book"),
+    "artist": getCookie("artist")
 }];
 
-console.log(book_list);
+//console.log(book_list);
 
 loadTrack(track_index);
 
@@ -122,6 +135,10 @@ function loadTrack(track_index) {
 
     curr_track.addEventListener('ended', nextTrack);
 }
+
+
+
+
 
 function reset() {
     curr_time.textContent = "00:00";
@@ -237,4 +254,20 @@ function muteUnmute() {
 function hakim() {  // max volume (copywrite for hakim)
     curr_track.volume = 1;
     volume_slider.value = Number(curr_track.volume * 100);
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }

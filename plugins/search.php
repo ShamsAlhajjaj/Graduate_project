@@ -1,6 +1,21 @@
 <?php
+
+
+function bookView($name, $des, $coverSrc, $id)
+{
+
+    return
+        '<div id="' . $id . '" class="Book" onmouseover="readText(this.innerText)" onmouseleave="stopSpeak()"
+            onclick="openBook(' . $id . ')">
+                <img class="BookCover" src="' . $coverSrc . '">
+                <div class="BookInfo">
+                    <p class="BookName">' . $name . $id . '</p>
+                    <p class="BookDescription">' . $des . '</p>
+                 </div>
+            </div>';
+}
+
 try {
-    include 'plugins\bookViewFun.php';
     $db = new PDO("mysql:host=localhost; dbname=shams", "root", "");
 } catch (PDOException $e) {
     echo $e->getMessage();
@@ -14,35 +29,70 @@ if (isset($_GET['btn_search']) && $_GET['search'] > 0) {
 $query = $db->prepare("SELECT * FROM books WHERE name LIKE :value");
 $query->bindParam("value", $value);
 $query->execute();
-$books = array();
 
-foreach ($query as $data) {
+$num_rows = $query->rowCount();
 
-    $name = $data['name'];
-    $discription = $data['dis'];
-    $cover = $data['cover'];
-    $id = $data['id'];
+if ($num_rows > 0) {
+    // There are records in the database
+    $books = array();
 
-    $book = array(
-        'img' => $data['cover'],
-        'name' => $data['name'],
-        'artist' => $data['author'],
-        'book' => $data['dir'],
-        'description' => $data['dis'],
 
-    );
-    array_push($books, $book);
 
-    echo bookView($name, $discription, $cover, $id);
+    foreach ($query as $data) {
+
+        $name = $data['name'];
+        $discription = $data['dis'];
+        $cover = $data['cover'];
+        $id = $data['id'];
+
+        $book = array(
+            'img' => $data['cover'],
+            'name' => $data['name'],
+            'artist' => $data['author'],
+            'book' => $data['dir'],
+            'description' => $data['dis'],
+
+        );
+        array_push($books, $book);
+
+        echo bookView($name, $discription, $cover, $id);
+    }
+
+    //if (!isset($_SESSION['first_time'])) {
+    $json = json_encode($books);
+    file_put_contents('books.json', $json);
+    //}
+
+} else {
+    // There are no records in the database
+    echo "<h1>There are no results matching your search</h1>";
 }
 
-
-$json = json_encode($books);
-
-file_put_contents('books.json', $json);
 
 ?>
 
 <script>
-storeBook(1)
+async function setCookie(cname, cvalue, exdays) {
+    let d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function storeBook(id) {
+    x = fetch('books.json')
+        .then(response => response.json())
+        .then(data => {
+            setCookie("name", data[id - 1].name, 1);
+            setCookie("img", data[id - 1].img, 1);
+            setCookie("artist", data[id - 1].artist, 1);
+            setCookie("book", data[id - 1].book, 1);
+        });
+}
+async function openBook(id) {
+    await storeBook(id);
+    window.location.assign("listening.php");
+}
+
+storeBook(1);
 </script>
