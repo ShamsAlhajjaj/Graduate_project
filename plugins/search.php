@@ -57,7 +57,21 @@ if ($num_rows > 0) {
 
         echo bookView($name, $discription, $cover, $id);
     }
+    $results = '';
+    $i = 1;
+    foreach ($books as $x) {
+        $results = $results . $i . ',' . '-' . $x['name'] . '\n';
+        $i++;
+    }
 
+    //print_r($results);
+
+    echo "<script>
+    let mySpeech_en = new p5.Speech();
+    mySpeech_en.setLang('en-US');
+    mySpeech_en.setVoice('Alice');
+    mySpeech_en.speak('results: '+'" . $results . "')
+    </script>";
     //if (!isset($_SESSION['first_time'])) {
     $json = json_encode($books);
     file_put_contents('books.json', $json);
@@ -66,6 +80,12 @@ if ($num_rows > 0) {
 } else {
     // There are no records in the database
     echo "<h1>There are no results matching your search</h1>";
+    echo "<script>
+    let mySpeech_en = new p5.Speech();
+    mySpeech_en.setLang('en-US');
+    mySpeech_en.setVoice('Alice');
+    mySpeech_en.speak('There are no results matching your search')
+    </script>";
 }
 
 

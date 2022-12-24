@@ -46,9 +46,9 @@
     </div>
 
     <script>
-    let mySpeech_en = new p5.Speech();
-    mySpeech_en.setLang("en-US");
-    mySpeech_en.setVoice('Alice')
+    // let mySpeech_en = new p5.Speech();
+    // mySpeech_en.setLang("en-US");
+    // mySpeech_en.setVoice('Alice')
     //mySpeech_en.speak("Welcome to the library home page, you can hover your mouse to view the contents")
 
     function search(value) {
@@ -77,16 +77,42 @@
         if (resultArray[0] == 'Search') {
             resultArray.shift();
             search(resultArray.join(" ").slice(0, -1));
-        } else {
-            if (resultArray[0] == 'Open.' || resultArray[0] == 'Open') {
+        } else if (resultArray[0] == 'Open') {
+            if (resultArray.includes('1.') || resultArray.includes('#1.') || resultArray.includes('1') || resultArray
+                .includes('one') || resultArray.includes('one.')) {
                 openBook(1);
-                console.log("Open book ok");
             }
+            if (resultArray.includes('2.') || resultArray.includes('#2.') || resultArray.includes('2') || resultArray
+                .includes('two') || resultArray.includes('two.')) {
+                openBook(2);
+            }
+            if (resultArray.includes('3.') || resultArray.includes('#3.') || resultArray.includes('3') || resultArray
+                .includes('three') || resultArray.includes('three.')) {
+                openBook(3);
+            }
+            if (resultArray.includes('4.') || resultArray.includes('#4.') || resultArray.includes('4') || resultArray
+                .includes('four') || resultArray.includes('four.')) {
+                openBook(4);
+            }
+
+            if (resultArray.includes('5.') || resultArray.includes('#5.') || resultArray.includes('5') || resultArray
+                .includes('five') || resultArray.includes('five.')) {
+                openBook(5);
+            }
+            if (resultArray.includes('6.') || resultArray.includes('#6.') || resultArray.includes('6') || resultArray
+                .includes('six') || resultArray.includes('six.')) {
+                openBook(6);
+            }
+            if (resultArray.includes('7.') || resultArray.includes('#7.') || resultArray.includes('7') || resultArray
+                .includes('seven') || resultArray.includes('seven.')) {
+                openBook(7);
+            }
+
+
+
+
         }
-
-
     }
-
 
 
     function readText(text) {
