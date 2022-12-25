@@ -1,98 +1,105 @@
-         .ListBooks{
-            height: 100%;
-            padding-top: 300px;
-            padding-left: 280px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            row-gap: 15px;
-            column-gap: 15px;
-            max-width: 1600px;
-        }
+.ListBooks{
+    height: 100%;
+    padding-top: 300px;
+    padding-left: 280px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 15px;
+    max-width: 1600px;
+}
 
-        .Book{
-            padding: 2px;
+.Book{
+    overflow:clip;
+    padding: 2px;
 
-            width: 300px;
-            height: 200px;
+    width: 300px;
+    height: 200px;
 
-            border: 6px;
-            border-color: rgba(80, 70, 100, 0.4);
-            border-style: solid;
-            border-radius: 8px;
+    border: 6px;
+    border-color: rgba(80, 70, 100, 0.4);
+    border-style: solid;
+    border-radius: 8px;
 
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            column-gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 15px;
 
-            font-family: Arial;
-            color: rgb(210, 245, 245);
-            background-color: rgba(83, 70, 102, 0.01);
-            cursor: pointer;
-            transition: 0.5s;
-        }
+    font-family: Arial;
+    color: rgb(210, 245, 245);
+    background-color: rgba(83, 70, 102, 0.01);
+    cursor: pointer;
+    transition: 0.5s;
+}
 
-        .Book:hover {
-            width: 450px;
-            height:350px;
-        }
+.Book:hover {
+    width: 450px;
+    height:350px;
+    text-align: center;
+}
 
-        .BookInfo{
-            display: flex;
-            flex-direction: row;
-            margin: 0;
-            padding: 0;
+.BookInfo{
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
 
-            display: grid;
-            grid-template-rows: 70px 1fr;
-        }
-        .BookName {
-            display: flex;
-            margin: 0;
-            padding: 5px 0px 0px 5px;
-            border-radius: 8px;
+    display: grid;
+    grid-template-rows: 70px 1fr;
+}
+.BookName {
+    display: flex;
+    margin: 0;
+    padding: 5px 0px 0px 5px;
+    border-radius: 8px;
 
-            background-color: rgba(130, 90, 210, 0.2);
-            
-            font-family: 'Roboto', 'Times New Roman';
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .BookDescription {
-            display: flex;
-            margin: 2px 2px;
-            padding: 10px 5px 5px 10px;
-            border-radius: 8px;
+    background-color: rgba(130, 90, 210, 0.2);
+    
+    font-size: 16px;
+    font-weight: bold;
+}
+.BookDescription {
 
-            background-color: rgba(210, 90, 170, 0.2); 
-            
-        }
-        .BookCover {
-            display: flex;
+    display: flex;
+    margin: 2px 2px;
+    padding: 10px 5px 5px 10px;
+    border-radius: 8px;
+    height: 100%;
+    background-color: rgba(210, 90, 170, 0.2); 
+    overflow: hidden;
+    
+}
+.BookCover {
+    display: flex;
 
-            width: 130px;
-            border-radius: 8px;
-        }
+    width: 130px;
+    border-radius: 8px;
+}
 
-        @media (max-width: 1790px) {
-            .ListBooks{
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-            .Book:hover {
-                width: 400px;
-                height: 320px;
-            }
-        }
-        @media (max-width: 1355px) {
-            .ListBooks{
-                padding-left: 100px;
-                grid-template-columns: 1fr 1fr;
-            }
-            .Book {
-                width: 360px;
-                height: 240px;
-            }
-            .Book:hover {
-                width: 380px;
-                height: 300px;
-            }
-        }
+@media (max-width: 1790px) {
+    .ListBooks{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .Book:hover {
+        width: 400px;
+        height: 320px;
+    }
+}
+@media (max-width: 1355px) {
+    .ListBooks{
+        padding-left: 100px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .Book {
+        width: 360px;
+        height: 240px;
+    }
+    .Book:hover {
+        width: 380px;
+        height: 300px;
+    }
+}

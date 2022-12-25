@@ -45,16 +45,15 @@
             <img src="_images/hola/TTU_LOGO.png">
         </div>
         <div>
-            <p> This website was developed and designed by Tafila Technical University students as a graduation project
-
-                The whole story began when he discovered a strange device.. and then things took a strange turn.. You
-                see him as an ordinary boy, but he hides secrets.. Ben 10</p>
+            <p> The Blind Library is a graduation project submitted by a group of students from Tafila Technical University, majoring in Computer
+                Engineering, for the second half of the academic year 2021-2022, under the supervision of Dr. Ziyad Al-Odat.
+            </p>
         </div>
         <div>
-            <p>Shams</p>
-            <p>Shomlokh</p>
-            <p>Baraa</p>
-            <p>Eman</p>
+            <p>Shams El-Deen Al-Hajjaj</p>
+            <p>Mohammad Shamlakh</p>
+            <p>Bara'a Al-Qatameen</p>
+            <p>Eman Jaber</p>
         </div>
     </div>
 </body>

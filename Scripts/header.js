@@ -1,9 +1,3 @@
-function searchBox(){
-    let searchedText = document.getElementById("SrchBoxFn").value;
-    if (searchedText != '')
-        visitPage('search_results.html')
-}
-
 function openPopUP() {
     if(document.getElementById('PopUp1').style.opacity == 0)
     {

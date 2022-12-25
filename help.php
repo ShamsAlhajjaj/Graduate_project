@@ -18,8 +18,10 @@
     <script src="scripts/p5.speech.js"></script>
 
 </head>
-
-<body class="mainBody" style="margin: 0; background-color: rgb(30, 200, 170);">
+<body style="margin: 0;">
+    <div class="background"
+        style="z-index:-99; position: fixed; top:0; left: 0; background:linear-gradient(0deg, #534666, #853065, #534666); width: 100%; height: 100%">
+    </div>
 
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
     <?php
@@ -35,6 +37,7 @@
     <?php
     include 'sidebar.php';
     ?>
+
 </body>
 
 </html>

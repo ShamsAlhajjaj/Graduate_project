@@ -30,17 +30,20 @@
 
 
 </head>
-
-<body style="margin: 0; background: linear-gradient(320deg, #42E695, #3BB2B8);">
+<body style="margin: 0;">
+    <div class="background"
+        style="z-index:-99; position: fixed; top:0; left: 0; background:linear-gradient(0deg, #AC6675, #534666, #534666); width: 100%; height: 100%">
+    </div>
 
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
-    <?php include 'headbar.php' ?>
-
-
+    <?php
+    include 'headbar.php';
+    ?>
 
     <!--!!!!!!!!!!!!!!!!    POPUPS    !!!!!!!!!!!!!!!!-->
-    <?php include 'popups.php' ?>
-
+    <?php
+    include 'popups.php';
+    ?>
 
     <!--!!!!!!!!!!!!!!!!    BODY    !!!!!!!!!!!!!!!!-->
     <?php

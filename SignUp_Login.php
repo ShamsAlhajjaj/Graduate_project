@@ -23,16 +23,6 @@
     <!--!!!!!!!!!!!!!!!!    HEADER BAR   !!!!!!!!!!!!!!!!-->
 
     <?php include 'headbar.php' ?>
-    <!-- <div class="HeaderBar">
-        <p class="HeaderText" role="button" onclick="visitPage('home.html')">Blind's Library</p>
-        <div class="SearchBar">
-            <input id="SrchBoxFn" class="SearchTextBox" type="text">
-            <img class="SearchButton" src="_images/search-button-icon/search_button_icon.png" width="32px" role="button"
-                onclick="searchBox()">
-        </div>
-    </div> -->
-
-    <!--!!!!!!!!!!!!!!!!    BODY    !!!!!!!!!!!!!!!!-->
 
     <div class="MainDiv">
         <form class="SignUpSide" method="POST" action="#">
@@ -50,8 +40,8 @@
             <div>
                 <button class="SignUpButton" onclick="SignUpCheak()" name="signUp">Sign Up</button>
             </div>
-        </form>
-        <?php
+            
+        <?php   
         if (isset($_POST['signUp'])) {
             $fname = $_POST['firstName'];
             $lname = $_POST['lastName'];
@@ -63,10 +53,11 @@
             $query = $db->prepare("INSERT INTO gettable (firstName, lastName, email, password) VALUES ('{$fname}', '{$lname}', '{$email}', '{$pass}')");
 
             $query->execute();
-            echo "<h1>sign up ok</h1>";
+            echo "<h3>Sign Up OK</h3>";
         } else
-            echo '<h1>there is a problem sign up!</h1>';
+            echo '<h3>There is a problem sign up!</h3>';
         ?>
+        </form>
         <form class="LoginSide" method="POST" action="#">
             <p style="font-size: 60px;">Login</p>
             <div>

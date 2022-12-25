@@ -8,7 +8,7 @@
              onmouseleave="stopSpeak()">Advanced Search</button>
          <button class="SBBtns" onclick="visitPage('request_book.php')" onmouseover="readText(this.innerText)"
              onmouseleave="stopSpeak()">Request a Book</button>
-         <button class="SBBtns" onclick="visitPage('login_volunteer.php')" onmouseover="readText(this.innerText)"
+         <button class="SBBtns" onclick="visitPage('SignUp_Login.php')" onmouseover="readText(this.innerText)"
              onmouseleave="stopSpeak()">Join Us As a Volunteer</button>
          <button class="SBBtns" onclick="visitPage('about_us.php')" onmouseover="readText(this.innerText)"
              onmouseleave="stopSpeak()">About Us</button>
