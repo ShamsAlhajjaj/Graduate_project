@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
     <title>Blind's Library</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/header_styles.css">
@@ -23,6 +24,7 @@
 </head>
 
 <body style="margin: 0;">
+
     <div class="background"
         style="z-index:-99; position: fixed; top:0; left: 0; background:linear-gradient(0deg, #AC6675, #534666, #534666); width: 100%; height: 100%">
     </div>
@@ -46,11 +48,6 @@
     </div>
 
     <script>
-    // let mySpeech_en = new p5.Speech();
-    // mySpeech_en.setLang("en-US");
-    // mySpeech_en.setVoice('Alice')
-    //mySpeech_en.speak("Welcome to the library home page, you can hover your mouse to view the contents")
-
     function search(value) {
         var button = document.getElementById('search');
         var inputField = document.getElementById('SrchBoxFn');
@@ -62,11 +59,39 @@
 
 
 
-    let myRec = new p5.SpeechRec('en-US', parseResult);
+    let myRec = new p5.SpeechRec('ar-JO', parseResult);
     myRec.continuous = true;
-    // myRec.interimResults = true;
-    myRec.timeout = 100000;
-    myRec.start();
+
+    let micStatus = false;
+
+
+    document.body.onkeydown = function(e) {
+        if (e.key == " " ||
+            e.code == "Space" ||
+            e.keyCode == 32
+        ) {
+            if (!micStatus) {
+                myRec.start();
+                micStatus = true;
+                mySpeech_en.pause();
+            }
+
+        }
+    }
+
+    document.body.onkeyup = function(e) {
+        if (e.key == " " ||
+            e.code == "Space" ||
+            e.keyCode == 32
+        ) {
+
+            if (micStatus) {
+                myRec.stop();
+                micStatus = false;
+                mySpeech_en.resume();
+            }
+        }
+    }
 
     function parseResult() {
         myRec.resultString
@@ -74,46 +99,41 @@
 
         console.log(resultArray.join(" "));
 
-        if (resultArray[0] == 'Search') {
+        if (resultArray.includes('تحديث.')) {
+            mySpeech_en.stop();
+            visitPage('index.php')
+
+        } else if (resultArray[0] + ' ' + resultArray[1] == 'ابحث عن' || resultArray[0] + ' ' + resultArray[1] ==
+            'أبحث عن') {
+            resultArray.shift();
             resultArray.shift();
             search(resultArray.join(" ").slice(0, -1));
-        } else if (resultArray[0] == 'Open') {
-            if (resultArray.includes('1.') || resultArray.includes('#1.') || resultArray.includes('1') || resultArray
-                .includes('one') || resultArray.includes('one.')) {
+        } else if (resultArray[0] == 'شغل' || resultArray[0] == 'اذهب' || resultArray[0] == 'أفتح' || resultArray[
+                0] ==
+            'افتح') {
+            if (resultArray.includes('واحد') || resultArray.includes('واحد.') || resultArray.includes('الأول.')) {
                 openBook(1);
-            }
-            if (resultArray.includes('2.') || resultArray.includes('#2.') || resultArray.includes('2') || resultArray
-                .includes('two') || resultArray.includes('two.')) {
+            } else if (resultArray.includes("تنين.") || resultArray.includes("الثاني.")) {
                 openBook(2);
-            }
-            if (resultArray.includes('3.') || resultArray.includes('#3.') || resultArray.includes('3') || resultArray
-                .includes('three') || resultArray.includes('three.')) {
+            } else if (resultArray.includes("تلاتة.") || resultArray.includes("الثالث.")) {
                 openBook(3);
-            }
-            if (resultArray.includes('4.') || resultArray.includes('#4.') || resultArray.includes('4') || resultArray
-                .includes('four') || resultArray.includes('four.')) {
+            } else if (resultArray.includes("أربعة.") || resultArray.includes("الرابع.")) {
                 openBook(4);
-            }
-
-            if (resultArray.includes('5.') || resultArray.includes('#5.') || resultArray.includes('5') || resultArray
-                .includes('five') || resultArray.includes('five.')) {
+            } else if (resultArray.includes("خمسة.") || resultArray.includes("الخامس.")) {
                 openBook(5);
-            }
-            if (resultArray.includes('6.') || resultArray.includes('#6.') || resultArray.includes('6') || resultArray
-                .includes('six') || resultArray.includes('six.')) {
+            } else if (resultArray.includes("ستة.") || resultArray.includes("السادس.")) {
                 openBook(6);
-            }
-            if (resultArray.includes('7.') || resultArray.includes('#7.') || resultArray.includes('7') || resultArray
-                .includes('seven') || resultArray.includes('seven.')) {
+            } else if (resultArray.includes("سبعة.") || resultArray.includes("السابع.")) {
                 openBook(7);
+            } else if (resultArray.includes("تمانة.") || resultArray.includes("الثامن.")) {
+                openBook(8);
+            } else if (resultArray.includes("التاسع.") || resultArray.includes("تسعة.")) {
+                openBook(9);
+            } else if (resultArray.includes("العاشر.") || resultArray.includes("عشرة.")) {
+                openBook(10);
             }
-
-
-
-
         }
     }
-
 
     function readText(text) {
         mySpeech_en.speak(text)

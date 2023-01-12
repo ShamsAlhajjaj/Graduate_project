@@ -1,33 +1,67 @@
-let myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
+let myRec = new p5.SpeechRec('ar-JO', parseResult); // new P5.SpeechRec object
 myRec.continuous = true; // do continuous recognition
 myRec.interimResults = true; // allow partial recognition (faster, less accurate)
-myRec.timeout = 100000;
 
-//let mySpeech = new p5.Speech();
-//mySpeech.setLang("ar-JO");
-//mySpeech.speak("للتَحَكُّمْ فِي مُشَغِّلِ الْكُتُبْ، اِسْتَخْدِمِ الْأَوَامِرَ التَّالِيَة: شَغِّلْ: لِتَشْغِيلِ الْكِتَابْ. تَوَقَّفْ: لإيقاف الْكِتَابْ. التالي: لِتَشْغِيلِ الْكِتَابِ التالي. السَّابِقْ: لِتَشْغِيلِ الْكِتَابِ السَّابِقْ. اِرْفَعْ أَوْ عَلِّيْ: لِرَفَعِ الصَّوْتْ. اِخْفِضْ أَوْ وَطّيْ: لخفضِ الصَّوْتْ.");
 
-let mySpeech_en = new p5.Speech();
-mySpeech_en.setLang("en-US");
-mySpeech_en.setVoice('Alice');
-mySpeech_en.speak("To control the book player, use the following commands: play, or on, or resume: to play the book. stop, or of, or pause: to stop the book. Next: To play the next book. Previous: To play the previous book. Up, or raise: to raise the volume. down, or low: to lower the volume");
+// let mySpeech_en = new p5.Speech();
+// mySpeech_en.setLang("en-US");
+// mySpeech_en.setVoice('Alice');
+// mySpeech_en.speak("You are lestening to " + getCookie("name") + ". To control the book player, use the following commands: play, or on: to play the book. stop, or of, or pause: to stop the book. Next: To play the next book. Previous: To play the previous book. Up, or raise: to raise the volume. down, or low: to lower the volume");
 
+let mySpeech = new p5.Speech();
+mySpeech.setLang("ar-SA");
+mySpeech.stop();
+mySpeech.speak("كتاب: " + getCookie("name"));
+mySpeech.speak("للتَحَكُّمْ فِي مُشَغِّلِ الْكُتُبْ، اِسْتَخْدِمِ الْأَوَامِرَ التَّالِيَة: شَغِّلْ: لِتَشْغِيلِ الْكِتَابْ. تَوَقَّفْ: لإيقاف الْكِتَابْ. اِرْفَعْ أَوْ عَلِّيْ: لِرَفَعِ الصَّوْتْ. اِخْفِضْ أَوْ وَطّيْ: لخفضِ الصَّوْتْ.");
+
+
+let micStatus = false;
+
+document.body.onkeydown = function (e) {
+    if (e.key == " " ||
+        e.code == "Space" ||
+        e.keyCode == 32
+    ) {
+        if (!micStatus) {
+            myRec.start();
+            micStatus = true;
+            mySpeech.pause();
+        }
+
+    }
+}
+
+document.body.onkeyup = function (e) {
+    if (e.key == " " ||
+        e.code == "Space" ||
+        e.keyCode == 32
+    ) {
+
+        if (micStatus) {
+            myRec.stop();
+            micStatus = false;
+            mySpeech.resume();
+        }
+    }
+}
 
 function readText(string) {
-    mySpeech_en.speak(string)
+    mySpeech.speak(string)
 }
 
 
 function stopSpeak() {
-    mySpeech_en.stop();
+    mySpeech.stop();
 }
 
-function setup() {
-    myRec.start(); // start engine
-}
 
 
 function parseResult() {
+    resultArray = myRec.resultString.split(" ");
+    console.log(myRec.resultString);
+    if (resultArray.includes('إلى') && resultArray.includes('الصفحة') && resultArray.includes("الرئيسية")) {
+        visitPage('index.php');
+    }
     // recognition system will often append words into phrases.
     // so hack here is to only use the last word:
     var mostrecentword = myRec.resultString.split(' ').pop();
@@ -36,6 +70,8 @@ function parseResult() {
         || mostrecentword.indexOf("resume") !== -1
         || mostrecentword.indexOf("شغل") !== -1
         || mostrecentword.indexOf("تشغيل") !== -1
+        || mostrecentword.indexOf("إبدء") !== -1
+        || mostrecentword.indexOf("ابدأ") !== -1
     ) { playTrack() }
     else if (mostrecentword.indexOf("pause") !== -1
         || mostrecentword.indexOf("stop") !== -1
@@ -65,11 +101,15 @@ function parseResult() {
     ) { volumeDown() }
     else if (
         mostrecentword.indexOf("mute") !== -1
+        || mostrecentword.indexOf("اصمت") !== -1
         || mostrecentword.indexOf("صامت") !== -1) { muteUnmute() }
     else if (mostrecentword.indexOf("random") !== -1
         || mostrecentword.indexOf("shuffle") !== -1) { randomTrack() }
-    else if (mostrecentword.indexOf("max") !== -1) { hakim() }
-    console.log(mostrecentword);
+    else if (mostrecentword.indexOf("max") !== -1
+        || mostrecentword.indexOf("أقصى") !== -1
+        || mostrecentword.indexOf("أعلى") !== -1) { hakim() }
+
+    //console.log(mostrecentword);
 
 
 }
@@ -110,7 +150,7 @@ let updateTimer;
 
 let book_list = [{          //get data from cookies
     "name": getCookie("name"),
-    "img": getCookie("img"),
+    "img": "_images/playback_images/" + getCookie("img"),
     "book": getCookie("book"),
     "artist": getCookie("artist")
 }];
